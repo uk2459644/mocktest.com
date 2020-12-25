@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function OurTeam(){
 
     return(
@@ -17,12 +19,21 @@ export default function OurTeam(){
         {/* <!-- Card 1 --> */}
         <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
           <div className="px-6">
-            <img alt="..." src="https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" className="shadow-lg rounded max-w-full mx-auto" 
+            <Image 
+            src="https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" 
+            alt="team photo 1"
+            className="shadow-lg rounded max-w-full mx-auto"
+            width={250}
+            height={350}
+            />
+            {/* <img alt="..." 
+            src="https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" 
+            className="shadow-lg rounded max-w-full mx-auto" 
             style={{
                 maxWidth:`250px`,
             }}
         // style="max-width: 250px"
-             />
+             /> */}
             <div className="pt-6 text-center">
               <h5 className="text-xl font-bold">Member Name</h5>
               <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">educational qualification / post name</p>
@@ -39,14 +50,21 @@ export default function OurTeam(){
         {/* <!-- Card 2 --> */}
         <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
           <div className="px-6">
-            <img alt="..." 
+          <Image 
+            src="https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" 
+            alt="team photo 1"
+            className="shadow-lg rounded max-w-full mx-auto"
+            width={250}
+            height={350}
+            />
+            {/* <img alt="..." 
             src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
              className="shadow-lg rounded max-w-full mx-auto" 
              style={{
                 maxWidth:`250px`,
             }}
         // style="max-width: 250px" 
-             />
+             /> */}
             <div className="pt-6 text-center">
               <h5 className="text-xl font-bold">Member Name</h5>
               <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">educational qualification / post name</p>
@@ -63,13 +81,20 @@ export default function OurTeam(){
         {/* <!-- Card 3 --> */}
         <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
           <div className="px-6">
-            <img alt="..." src="https://images.pexels.com/photos/3490348/pexels-photo-3490348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+          <Image 
+            src="https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" 
+            alt="team photo 1"
+            className="shadow-lg rounded max-w-full mx-auto"
+            width={250}
+            height={350}
+            />
+            {/* <img alt="..." src="https://images.pexels.com/photos/3490348/pexels-photo-3490348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
             className="shadow-lg rounded max-w-full mx-auto"
             style={{
                 maxWidth:`250px`,
             }}
         // style="max-width: 250px"
-             />
+             /> */}
             <div className="pt-6 text-center">
               <h5 className="text-xl font-bold">Member Name</h5>
               <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">educational qualification / post name</p>

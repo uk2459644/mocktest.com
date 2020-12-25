@@ -10,7 +10,7 @@ export default function LandingPage1() {
             <div
                 className="absolute top-0 w-full h-full bg-top bg-cover"
                 style={{
-                    backgroundImage:`url('/rishabh-agarwal-unsplash.jpg')`
+                    backgroundImage:`url('/study-1.jpg')`
                 }}
         //         style="
         //     background-image: url('https://images.pexels.com/photos/260409/pexels-photo-260409.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
