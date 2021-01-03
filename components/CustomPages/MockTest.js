@@ -1,4 +1,7 @@
+import MockCatCard from "../Cards/MockCatCard";
 import OverLapingCard from "../Cards/OverlaingCard";
+import OverLapTestCatCard from "../Cards/OverLapingTestCatCard";
+import QuintArticleCard from "../Cards/QuintArticleCard";
 
 export default function MockTest() {
 
@@ -15,27 +18,39 @@ export default function MockTest() {
             </div>
           </div>
           {/* <!-- Trainer Card Wrapper --> */}
-          <div className="flex flex-wrap">
-            {/* <!-- Card 1 --> */}
-            <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
-
-              <OverLapingCard
-
+          <div className="flex flex-wrap justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 justify-items-center">
+              
+              <OverLapTestCatCard
+                 cat="RRB GROUP D"
+                 link="/rrb-group-d/rrb-group-d-index"
+              />
+              <OverLapTestCatCard 
+                 cat="RRB NTPC"
+                 link="/rrb-ntpc/rrb-ntpc-index"
               />
 
-            </div>
-            {/* <!-- Card 2 --> */}
-            <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
+              <OverLapTestCatCard 
+                  cat="SSC CGL"
+                  link="/ssc-cgl/ssc-cgl-index"
+              />
+              <OverLapTestCatCard 
+                 cat="SSC CHSL"
+                 link="/ssc-chsl/ssc-chsl-index"
+              />
+              <OverLapTestCatCard 
+                  cat="SSC JE CE"
+                  link="/ssc-je-ce/ssc-je-ce-index"
+              
+              />
+              <OverLapTestCatCard 
+                  
+                  cat="SSC JE EE"
+                  link="/ssc-je-ee/ssc-je-ee-index"
+              />
 
-              <OverLapingCard />
-
-            </div>
-            {/* <!-- Card 3 --> */}
-            <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
-
-              <OverLapingCard />
-
-            </div>
+              </div>
+           
           </div>
         </div>
 
@@ -44,3 +59,13 @@ export default function MockTest() {
     </div>
   )
 }
+
+//  {/* <!-- Card 1 --> */}
+//  <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
+//  </div>
+//  {/* <!-- Card 2 --> */}
+//  <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
+//  </div>
+//  {/* <!-- Card 3 --> */}
+//  <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
+//  </div>
