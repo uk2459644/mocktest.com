@@ -74,7 +74,7 @@ export default function SSCJEEEIndex({ prev_testlist, testlist }){
                 </div>
             </section>
             <div>
-                <div className="flex flex-col rounded-md m-4 p-4  shadow-lg ">
+                <div className="flex  rounded-md m-4 p-4  shadow-lg ">
                     <div className={`${latTest ? 'block' : 'hidden'} flex-1  justify-items-center  `}>
                         <h4 className="text-center font-bold uppercase tracking-wider ">Latest test series</h4>
 
@@ -107,7 +107,8 @@ export default function SSCJEEEIndex({ prev_testlist, testlist }){
 
                         }
                     </div>
-                    <div className={`${prevTest ? 'block' : 'hidden'} flex-1 w-screen justify-items-center content-center `}>
+                   
+                    <div className={`${prevTest ? 'block' : 'hidden'} flex-1 justify-items-center `}>
                         <h4 className="text-center font-bold uppercase tracking-wider ">Previous year tests</h4>
                         {
                             prev_testlist.prev_testlist.length > 0 ? (

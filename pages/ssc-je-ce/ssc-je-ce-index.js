@@ -108,7 +108,7 @@ export default function SSCJECEIndex({ prev_testlist, testlist }){
 
                         }
                     </div>
-                    <div className={`${prevTest ? 'block' : 'hidden'} flex-1 w-screen justify-items-center content-center `}>
+                    <div className={`${prevTest ? 'block' : 'hidden'} flex-1 justify-items-center `}>
                         <h4 className="text-center font-bold uppercase tracking-wider ">Previous year tests</h4>
                         {
                             prev_testlist.prev_testlist.length > 0 ? (
