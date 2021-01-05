@@ -102,7 +102,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
             {
               answerset.length > 0 ? (
                 <div>
-                  <div class="m-2 overflow-y-scroll flex flex-row flex-wrap text-md text-justify md:text-md text-gray-700 font-light font-serif">
+                  <div class="m-2 h-56 overflow-y-scroll flex flex-row flex-wrap text-md text-justify md:text-md text-gray-700 font-light font-serif">
 
                   {
                     answerset.map((ans,index) =>{
