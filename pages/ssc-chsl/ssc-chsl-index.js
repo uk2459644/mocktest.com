@@ -75,7 +75,7 @@ export default function SSCCHSLIndex({ prev_testlist, testlist }){
                 </div>
             </section>
             <div>
-                <div className="flex flex-col rounded-md m-4 p-4  shadow-lg ">
+                <div className="flex flex-col rounded-md m-4 p-4  ">
                     <div className={`${latTest ? 'block' : 'hidden'} flex-1  justify-items-center  `}>
                         <h4 className="text-center font-bold uppercase tracking-wider ">Latest test series</h4>
 
