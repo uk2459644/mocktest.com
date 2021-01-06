@@ -6,6 +6,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
   const [compOn, setCompOn] = useState(false);
   const [infoOn, setInfoOn] = useState(false);
 
+ 
   return (
     <div class="flex flex-col overflow-hidden h-screen ">
       <header class="pt-3 p-1 ">

@@ -66,6 +66,9 @@ export default function QuestionPageSSCCGL ({questions}){
   
     const [panelOn, setPanelOn] = useState(false);
 
+   // let elem =document.getElementById('testpage');
+
+    
     
 
     const [answerdata, setAnswerData] = useState(new Array(questions.questions.length-1).fill(null).map(()=>({
@@ -76,9 +79,21 @@ export default function QuestionPageSSCCGL ({questions}){
     })))
 
    console.log(`${ answerdata[0]}`);
+
+   const openFullscreen =() =>  {
+    let elem =document.getElementById('testpage');
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+      elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+      elem.msRequestFullscreen();
+    }
+  }
    
     const nextQ =()=>{
         if( questionNumber === questions.questions.length-1){
+          window.scrollTo(0,1);
           alert(`You have reached last question.`);
         }else{
           setQuestionNumber(questionNumber+1);
@@ -211,8 +226,9 @@ export default function QuestionPageSSCCGL ({questions}){
                     qset.length &&
                     useranswer.length > 0 ? (
                       <>
+                      
                         <PracticeQuestionCard
-                         id="testpage"
+                         
                          question={qset[questionNumber]} 
                          questionNumber={questionNumber}
                          answerset={answerdata}
