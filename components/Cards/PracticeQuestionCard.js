@@ -7,7 +7,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
   const [infoOn, setInfoOn] = useState(false);
 
   return (
-    <div class="flex flex-col flex-wrap h-screen justify-between">
+    <div class="flex flex-col overflow-hidden h-screen ">
       <header class="pt-3 p-1 ">
         <div class="flex  flex-row flex-wrap  justify-around">
           <div className={`${question.comprehension_show ? 'block' : 'hidden'}`}>
@@ -27,7 +27,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
       <hr class="border-gray-400 " />
       <main class="mb-auto ">
         <div class="flex flex-row  pt-3 ">
-          <div class={`${infoOn ? 'hidden md:w-3/4 md:block' : 'w-full'} flex flex-col md:flex-row md:w-3/4 overflow-y-scroll h-72 md:h-96`}>
+          <div class={`${infoOn ? 'hidden md:w-3/4 md:block' : 'w-full'} flex flex-col md:flex-row md:w-3/4 overflow-y-auto h-72 md:h-96`}>
             {
               question.comprehension_doc ? (
                 <div class={` ${compOn ? 'block' : 'hidden'} flex-1  text-md text-justify md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6 `}>
@@ -102,7 +102,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
             {
               answerset.length > 0 ? (
                 <div>
-                  <div class="m-2 h-56 overflow-y-scroll flex flex-row flex-wrap text-md text-justify md:text-md text-gray-700 font-light font-serif">
+                  <div class="m-2 h-56 overflow-y-auto flex flex-row flex-wrap text-md text-justify md:text-md text-gray-700 font-light font-serif">
 
                   {
                     answerset.map((ans,index) =>{
