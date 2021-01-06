@@ -1,6 +1,7 @@
 import Axios from 'axios'
 
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import ModalCard from '../../../components/Cards/ModalCard';
 import PracticeQuestionCard from '../../../components/Cards/PracticeQuestionCard';
 
 
@@ -58,182 +59,230 @@ export async function getStaticPaths() {
     }
   } 
 
-
+  let elem;
 export default function QuestionPageSSCJECE ({questions}){
 
-    const [qset,setQset] = useState(questions.questions)
-    const [questionNumber,setQuestionNumber] = useState(1)
-    const [useranswer,setUserAnswer]=useState(new Array(questions.questions.length).fill(''));
+  const [qset,setQset] = useState(questions.questions)
+  const [questionNumber,setQuestionNumber] = useState(1)
+  const [useranswer,setUserAnswer]=useState(new Array(questions.questions.length).fill(''));
+
+  const [panelOn, setPanelOn] = useState(false);
+
+  const [ontest,setOntest] = useState(false);
+
+ // let elem =document.getElementById('testpage');
+
   
-    const [panelOn, setPanelOn] = useState(false);
-
-    
-
-    const [answerdata, setAnswerData] = useState(new Array(questions.questions.length-1).fill(null).map(()=>({
-      id: '',
-      correct_ans:'',
-      user_ans:'',
-      status:'',
-    })))
-
-   console.log(`${ answerdata[0]}`);
-   
-    const nextQ =()=>{
-        if( questionNumber === questions.questions.length-1){
-          alert(`You have reached last question.`);
-        }else{
-          setQuestionNumber(questionNumber+1);
-        }
-      }
-    
-      const prevQ =()=>{
-        if(questionNumber === 0){
-          alert(`You have reached last question.`);
-        }else{
-          setQuestionNumber(questionNumber-1);
-        }
-      }
-
-      const userAnswer = (correct_ans,user_ans,status) => {
   
-        let newArray=[...useranswer];
-        
-        newArray[questionNumber] ={
-          id: questionNumber,
-          correct_ans:correct_ans,
-          user_ans:user_ans,
-          status:status,
-        }
-    
-        setUserAnswer(newArray);
-        
-       // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
-       
+
+  const [answerdata, setAnswerData] = useState(new Array(questions.questions.length-1).fill(null).map(()=>({
+    id: '',
+    correct_ans:'',
+    user_ans:'',
+    status:'',
+  })))
+
+ console.log(`${ answerdata[0]}`);
+
+
+ useEffect(()=>{
+
+ elem =document.getElementById('testpage');
+ 
+
+},[]);
+
+ const openFullscreen =() =>  {
+ 
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+  }
+}
+const openFullscreenTr =() =>  {
+ 
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+    setOntest(true);
+  } else if (elem.webkitRequestFullscreen) { /* Safari */
+    elem.webkitRequestFullscreen();
+    setOntest(true);
+  } else if (elem.msRequestFullscreen) { /* IE11 */
+    elem.msRequestFullscreen();
+    setOntest(true);
+  }
+}
+ 
+  const nextQ =()=>{
+      if( questionNumber === questions.questions.length-1){
+        window.scrollTo(0,1);
+        alert(`You have reached last question.`);
+      }else{
+        setQuestionNumber(questionNumber+1);
       }
-    
-      const userAnswerData = (correct_ans,user_ans,status) => {
+    }
   
-        let newArray=[...answerdata];
-        
-        newArray[questionNumber-1] ={
-          id: questionNumber,
-          correct_ans:correct_ans,
-          user_ans:user_ans,
-          status:status,
-        }
-    
-        setAnswerData(newArray);
-        
-       // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
-       
+    const prevQ =()=>{
+      if(questionNumber === 0){
+        alert(`You have reached last question.`);
+      }else{
+        setQuestionNumber(questionNumber-1);
       }
-      const markViewLaterData = () => {
+    }
 
-        let correct_ans = useranswer[questionNumber].correct_ans;
-        let user_ans=useranswer[questionNumber].user_ans;
+    const userAnswer = (correct_ans,user_ans,status) => {
+
+      let newArray=[...useranswer];
+      
+      newArray[questionNumber] ={
+        id: questionNumber,
+        correct_ans:correct_ans,
+        user_ans:user_ans,
+        status:status,
+      }
   
-        let newArray=[...answerdata];
-        
-        newArray[questionNumber-1] ={
-          id: questionNumber,
-          correct_ans:correct_ans,
-          user_ans:user_ans,
-          status:'mv',
-        }
-    
-        setAnswerData(newArray);
-        
-       // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
-      }
-
-      const clearOptionData = () => {
-
-        let correct_ans = useranswer[questionNumber].correct_ans;
-        let user_ans=useranswer[questionNumber].user_ans;
+      setUserAnswer(newArray);
+      
+     // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
+     
+    }
   
-        let newArray=[...answerdata];
-        
-        newArray[questionNumber-1] ={
-          id: questionNumber,
-          correct_ans:correct_ans,
-          user_ans:'',
-          status:'co',
-        }
-    
-        setAnswerData(newArray);
-        
-       // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
+    const userAnswerData = (correct_ans,user_ans,status) => {
+
+      let newArray=[...answerdata];
+      
+      newArray[questionNumber-1] ={
+        id: questionNumber,
+        correct_ans:correct_ans,
+        user_ans:user_ans,
+        status:status,
       }
-
-
-      const markViewLater = () => {
-
-        let correct_ans = useranswer[questionNumber].correct_ans;
-        let user_ans=useranswer[questionNumber].user_ans;
   
-        let newArray=[...useranswer];
-        
-        newArray[questionNumber] ={
-          id: questionNumber,
-          correct_ans:correct_ans,
-          user_ans:user_ans,
-          status:'mv',
-        }
-    
-        setUserAnswer(newArray);
-        
-       // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
+      setAnswerData(newArray);
+      
+     // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
+     
+    }
+    const markViewLaterData = () => {
+
+      let correct_ans = useranswer[questionNumber].correct_ans;
+      let user_ans=useranswer[questionNumber].user_ans;
+
+      let newArray=[...answerdata];
+      
+      newArray[questionNumber-1] ={
+        id: questionNumber,
+        correct_ans:correct_ans,
+        user_ans:user_ans,
+        status:'mv',
       }
-
-      const clearOption = () => {
-
-        let correct_ans = useranswer[questionNumber].correct_ans;
-        let user_ans=useranswer[questionNumber].user_ans;
   
-        let newArray=[...useranswer];
-        
-        newArray[questionNumber] ={
-          id: questionNumber,
-          correct_ans:correct_ans,
-          user_ans:'',
-          status:'co',
-        }
-    
-        setUserAnswer(newArray);
-        
-       // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
+      setAnswerData(newArray);
+      
+     // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
+    }
+
+    const clearOptionData = () => {
+
+      let correct_ans = useranswer[questionNumber].correct_ans;
+      let user_ans=useranswer[questionNumber].user_ans;
+
+      let newArray=[...answerdata];
+      
+      newArray[questionNumber-1] ={
+        id: questionNumber,
+        correct_ans:correct_ans,
+        user_ans:'',
+        status:'co',
       }
+  
+      setAnswerData(newArray);
+      
+     // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
+    }
 
-    return(
-        <div>
-           {
-                    qset.length > 0 && 
-                    questionNumber !== 
-                    qset.length &&
-                    useranswer.length > 0 ? (
-                      <>
-                        <PracticeQuestionCard
-                         question={qset[questionNumber]} 
-                         questionNumber={questionNumber}
-                         answerset={answerdata}
 
-                         userAnswer={userAnswerData}
-                         markViewLater={markViewLaterData}
-                         clearOption={clearOptionData}
-                         nextQ={nextQ}
-                         prevQ={prevQ}
-                         setQuestionNumber={setQuestionNumber}
+    const markViewLater = () => {
 
-                         useranswer={answerdata[questionNumber-1]} 
-                         
-                         />
-                       </>
-          
-                    ) :
-                      null
-                  }
-              
+      let correct_ans = useranswer[questionNumber].correct_ans;
+      let user_ans=useranswer[questionNumber].user_ans;
+
+      let newArray=[...useranswer];
+      
+      newArray[questionNumber] ={
+        id: questionNumber,
+        correct_ans:correct_ans,
+        user_ans:user_ans,
+        status:'mv',
+      }
+  
+      setUserAnswer(newArray);
+      
+     // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
+    }
+
+    const clearOption = () => {
+
+      let correct_ans = useranswer[questionNumber].correct_ans;
+      let user_ans=useranswer[questionNumber].user_ans;
+
+      let newArray=[...useranswer];
+      
+      newArray[questionNumber] ={
+        id: questionNumber,
+        correct_ans:correct_ans,
+        user_ans:'',
+        status:'co',
+      }
+  
+      setUserAnswer(newArray);
+      
+     // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
+    }
+
+  return(
+      <div id="testpage" className="bg-white opacity-100">
         
-    </div>
-    )
+         {
+                  qset.length > 0 && 
+                  questionNumber !== 
+                  qset.length &&
+                  useranswer.length > 0 ? (
+                    <div className={` ${ontest ? 'block' :'hidden'} `}>
+                    
+                      <PracticeQuestionCard
+                       
+                       question={qset[questionNumber]} 
+                       questionNumber={questionNumber}
+                       answerset={answerdata}
+
+                       openFullscreen={openFullscreen}
+
+                       userAnswer={userAnswerData}
+                       markViewLater={markViewLaterData}
+                       clearOption={clearOptionData}
+                       nextQ={nextQ}
+                       prevQ={prevQ}
+                       setQuestionNumber={setQuestionNumber}
+
+                       useranswer={answerdata[questionNumber-1]} 
+                       
+                       />
+                     </div>
+        
+                  ) :
+                    null
+                }
+                <div className={` ${ontest ? 'hidden' :'block'} `}>
+                  <ModalCard
+                  openFullscreen={openFullscreenTr}
+                   />
+                </div>
+            
+      
+  </div>
+  )
 }
