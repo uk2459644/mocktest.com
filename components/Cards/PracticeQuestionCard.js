@@ -27,7 +27,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
       <hr class="border-gray-400 " />
       <main class="mb-auto">
         <div class="flex flex-row  pt-3 ">
-          <div class={`${infoOn ? 'hidden md:w-3/4 md:block' : 'w-full'} flex flex-col md:flex-row md:w-3/4 `}>
+          <div class={`${infoOn ? 'hidden md:w-3/4 md:block' : 'w-full'} flex flex-col md:flex-row md:w-3/4 overflow-y-scroll `}>
             {
               question.comprehension_doc ? (
                 <div class={` ${compOn ? 'block' : 'hidden'} flex-1 flex-wrap text-md text-justify md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6 `}>
@@ -162,10 +162,11 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
 
       </main>
       <hr class="border-gray-400 mt-0 mb-0" />
-      <footer class={` ${infoOn ? 'hidden md:block md:justify-around md:flex' : 'block'} flex flex-row   flex-wrap p-1 justify-around `}>
+      <footer class={` ${infoOn ? 'hidden  md:block md:justify-around md:flex' : 'block md:grid-col-3 md:grid-row-3'}  grid  grid-cols-3 grid-rows-2 gap-2 p-2 `}>
         <button onClick={() => { prevQ(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Previous </button>
         <button onClick={() => { markViewLater(); }} class="no-underline text-white py-0 px-2 font-normal mx-0 bg-indigo-900 hover:bg-indigo-600 rounded">Mark for view later</button>
         <button onClick={() => { clearOption(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Clear option</button>
+        <button onClick={() => { nextQ(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Skip</button>
 
         <button onClick={() => { nextQ(); }} class="no-underline text-white py-2 px-2 font-normal mx-0 bg-cyan-600 hover:bg-cyan-900 rounded">Save & next </button>
       </footer>
