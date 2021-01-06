@@ -8,8 +8,8 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
 
   return (
     <div class="flex flex-col flex-wrap h-screen justify-between">
-      <header class="pt-3 p-1">
-        <div class="flex flex-row flex-wrap  justify-around">
+      <header class="pt-3 p-1 ">
+        <div class="flex  flex-row flex-wrap  justify-around">
           <div className={`${question.comprehension_show ? 'block' : 'hidden'}`}>
             <button onClick={() => setCompOn(!compOn)} class={` ${compOn ? 'bg-cyan-400 border-cyan-400' : 'bg-white border-cyan-400'}  border-2 h-5 w-5 rounded-full ring-cyan-400 `}>
             </button>
@@ -25,17 +25,17 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
         </div>
       </header>
       <hr class="border-gray-400 " />
-      <main class="mb-auto">
+      <main class="mb-auto ">
         <div class="flex flex-row  pt-3 ">
-          <div class={`${infoOn ? 'hidden md:w-3/4 md:block' : 'w-full'} flex flex-col md:flex-row md:w-3/4 overflow-y-scroll `}>
+          <div class={`${infoOn ? 'hidden md:w-3/4 md:block' : 'w-full'} flex flex-col md:flex-row md:w-3/4 overflow-y-scroll h-72 md:h-96`}>
             {
               question.comprehension_doc ? (
-                <div class={` ${compOn ? 'block' : 'hidden'} flex-1 flex-wrap text-md text-justify md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6 `}>
+                <div class={` ${compOn ? 'block' : 'hidden'} flex-1  text-md text-justify md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6 `}>
                   comprehensiont doc
                 </div>
 
               ) : (
-                  <div class={` ${compOn ? 'block' : 'hidden'} flex-1 flex-wrap text-md text-justify md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6 `}>
+                  <div class={` ${compOn ? 'block' : 'hidden'} flex-1  text-md text-justify md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6 `}>
                     {question.comprehension}
                   </div>
 
@@ -161,8 +161,8 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
         </div>
 
       </main>
-      <hr class="border-gray-400 mt-0 mb-0" />
-      <footer class={` ${infoOn ? 'hidden  md:block md:justify-around md:flex' : 'block md:grid-col-3 md:grid-row-3'}  grid  grid-cols-3 grid-rows-2 gap-2 p-2 `}>
+      <hr class="border-gray-400 mt-0 mb-0 " />
+      <footer class={` ${infoOn ? 'hidden md:h-24 md:grid ' : 'block h-24 '}  grid  grid-cols-3 grid-rows-2 gap-2 p-2 `}>
         <button onClick={() => { prevQ(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Previous </button>
         <button onClick={() => { markViewLater(); }} class="no-underline text-white py-0 px-2 font-normal mx-0 bg-indigo-900 hover:bg-indigo-600 rounded">Mark for view later</button>
         <button onClick={() => { clearOption(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Clear option</button>
