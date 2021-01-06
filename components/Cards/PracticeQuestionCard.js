@@ -1,10 +1,12 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function PracticeQuestionCard({ question, useranswer, userAnswer, answerset,
-  markViewLater, clearOption, nextQ, prevQ, setQuestionNumber }) {
+  markViewLater,openFullscreen, clearOption, nextQ, prevQ, setQuestionNumber }) {
 
   const [compOn, setCompOn] = useState(false);
   const [infoOn, setInfoOn] = useState(false);
+
+  
 
  
   return (
@@ -16,13 +18,27 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
             </button>
             <a class="text-light   text-sm uppercase pl-2 font-semibold">comprehension</a>
           </div>
+          <button class="no-underline text-white py-1  px-2 font-medium  bg-cyan-600 hover:bg-cyan-900 rounded">Submit </button>
           <a class="text-light flex-wrap text-sm uppercase pl-12 font-semibold">time</a>
           <div>
             <button onClick={() => setInfoOn(!infoOn)} class={` ${infoOn ? 'bg-cyan-400 border-cyan-400' : 'bg-white border-cyan-400'}  border-2 h-5 w-5 rounded-full ring-cyan-400 `}>
             </button>
             <a class="text-light   text-sm uppercase pl-2 font-semibold">Info</a>
           </div>
-          <button class="no-underline text-white py-1 px-2 font-medium mx-2 bg-cyan-600 hover:bg-cyan-900 rounded">Submit </button>
+          <button onClick={()=>{
+            openFullscreen();
+          }} >
+          <svg className="w-6 h-6 text-cyan-600" fill="none" viewBox="0 0 20 20" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z"  />
+          </svg>
+          {/* <svg className="w-6 h-6 text-cyan-600" fill="none" viewBox="0 0 20 20" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path strokeWidth="1" d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+            <path strokeWidth="1" d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
+          </svg> */}
+
+          </button>
+          
+         
         </div>
       </header>
       <hr class="border-gray-400 " />
@@ -59,19 +75,19 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
               <div className="flex-col flex-wrap text-md text-justify md:text-md text-gray-700 font-light font-serif ">
                 <div className="flex items-start pt-4 flex-row">
                   <button onClick={() => { userAnswer(question.correct_opt, 'a', 'v') }}
-                    className={`${useranswer.user_ans == 'a' ? 'bg-cyan-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
+                    className={`${useranswer.user_ans == 'a' ? 'bg-green-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
                   <p className="ml-2">{question.opt_a}</p>
                 </div>
                 <div className="flex items-start pt-4">
-                  <button onClick={() => { userAnswer(question.correct_opt, 'b', 'v') }} className={`${useranswer.user_ans == 'b' ? 'bg-cyan-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
+                  <button onClick={() => { userAnswer(question.correct_opt, 'b', 'v') }} className={`${useranswer.user_ans == 'b' ? 'bg-green-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
                   <p className="ml-2">{question.opt_b}</p>
                 </div>
                 <div className="flex items-start pt-4">
-                  <button onClick={() => { userAnswer(question.correct_opt, 'c', 'v') }} className={`${useranswer.user_ans == 'c' ? 'bg-cyan-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
+                  <button onClick={() => { userAnswer(question.correct_opt, 'c', 'v') }} className={`${useranswer.user_ans == 'c' ? 'bg-green-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
                   <p className="ml-2">{question.opt_c}</p>
                 </div>
                 <div className="flex items-start pt-4">
-                  <button onClick={() => { userAnswer(question.correct_opt, 'd', 'v') }} className={`${useranswer.user_ans == 'd' ? 'bg-cyan-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
+                  <button onClick={() => { userAnswer(question.correct_opt, 'd', 'v') }} className={`${useranswer.user_ans == 'd' ? 'bg-green-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
                   <p className="ml-2">{question.opt_d}</p>
                 </div>
               </div>
@@ -163,13 +179,13 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
 
       </main>
       <hr class="border-gray-400 mt-0 mb-0 " />
-      <footer class={` ${infoOn ? 'hidden md:h-24 md:grid ' : 'block h-24 '}  grid  grid-cols-3 grid-rows-2 gap-2 p-2 `}>
+      <footer class={` ${infoOn ? 'hidden  md:grid ' : 'block  '}  grid grid-cols-3 grid-row-2 gap-2 md:grid-cols-5   md:grid-rows-1 md:gap-6 p-2 md:p-2 `}>
         <button onClick={() => { prevQ(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Previous </button>
         <button onClick={() => { markViewLater(); }} class="no-underline text-white py-0 px-2 font-normal mx-0 bg-indigo-900 hover:bg-indigo-600 rounded">Mark for view later</button>
         <button onClick={() => { clearOption(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Clear option</button>
         <button onClick={() => { nextQ(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Skip</button>
 
-        <button onClick={() => { nextQ(); }} class="no-underline text-white py-2 px-2 font-normal mx-0 bg-cyan-600 hover:bg-cyan-900 rounded">Save & next </button>
+        <button onClick={() => { nextQ(); }} class="no-underline text-white py-2 px-2 font-normal mx-0 bg-cyan-600 hover:bg-cyan-900 rounded ">Save & next </button>
       </footer>
     </div>
   )
