@@ -162,7 +162,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
 
       </main>
       <hr class="border-gray-400 mt-0 mb-0" />
-      <footer class={` ${infoOn ? 'hidden' : 'block'} flex flex-row   flex-wrap p-1 justify-around `}>
+      <footer class={` ${infoOn ? 'hidden md:block md:justify-around md:flex' : 'block'} flex flex-row   flex-wrap p-1 justify-around `}>
         <button onClick={() => { prevQ(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Previous </button>
         <button onClick={() => { markViewLater(); }} class="no-underline text-white py-0 px-2 font-normal mx-0 bg-indigo-900 hover:bg-indigo-600 rounded">Mark for view later</button>
         <button onClick={() => { clearOption(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Clear option</button>
