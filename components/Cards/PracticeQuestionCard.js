@@ -4,7 +4,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
   markViewLater, clearOption, nextQ, prevQ, setQuestionNumber }) {
 
   const [compOn, setCompOn] = useState(false);
-  const [infoOn, setInfoOn] = useState(true);
+  const [infoOn, setInfoOn] = useState(false);
 
   return (
     <div class="flex flex-col flex-wrap h-screen justify-between">
@@ -80,7 +80,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
           <div class={` ${infoOn ? 'w-full  md:w-1/3 ' : 'hidden'}   border-l-2 `} >
             <div class="m-2  flex-col flex-wrap text-md text-justify md:text-md text-gray-700 font-light font-serif">
               <div class="flex items-start pt-2 flex-row">
-                <button class="bg-cyan-500 text-center text-white block h-10 w-10 border-2 rounded-r-2xl"></button>
+                <button class="bg-green-400 text-center text-white block h-10 w-10 border-2 rounded-r-2xl"></button>
                 <p className="ml-2"> Answered</p>
               </div>
               <div class="flex items-start pt-2 flex-row ">
@@ -88,11 +88,11 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
                 <p className="ml-2 text-base"> Marked for view later</p>
               </div>
               <div class="flex items-start pt-2 flex-row ">
-                <button class="bg-gray-500 text-center text-gray-800 block h-10 w-10 border-2 rounded-r-2xl"></button>
+                <button class="bg-red-600 text-center text-gray-800 block h-10 w-10 border-2 rounded-r-2xl"></button>
                 <p className="ml-2 text-base">Not visited / answered</p>
               </div>
               <div class="flex items-start pt-2 flex-row ">
-                <button class="bg-yellow-500 text-center text-gray-800 block h-10 w-10 border-2 rounded-r-2xl"></button>
+                <button class="bg-gray-100 text-center text-gray-800 block h-10 w-10 border-2 rounded-r-2xl"></button>
                 <p className="ml-2 text-base">Option cleared</p>
               </div>
             </div>
@@ -115,17 +115,17 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
 
                             ):(
                               answerset[index].status == 'v' ? (
-                                <button onClick={()=>{setQuestionNumber(index+1)}} class="bg-cyan-500 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
+                                <button onClick={()=>{setQuestionNumber(index+1)}} class="bg-green-400 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
 
                               ) : (
                                 answerset[index].status == 'co' ? (
-                                  <button onClick={()=>{setQuestionNumber(index+1)}} class="bg-yellow-500 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
+                                  <button onClick={()=>{setQuestionNumber(index+1)}} class="bg-gray-100 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
   
                                 ) :(
 
                                 
                                 
-                                <button onClick={()=>{setQuestionNumber(index+1)}} class="bg-gray-500 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
+                                <button onClick={()=>{setQuestionNumber(index+1)}} class="bg-red-600 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
                                 )
                               )
                             )
@@ -161,13 +161,13 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
         </div>
 
       </main>
-      <hr class="border-gray-400 mt-2 mb-2" />
-      <footer class="flex flex-row flex-wrap p-2 justify-around ">
-        <button onClick={() => { prevQ(); }} class="no-underline text-white py-2 px-2 font-medium mx-2 bg-gray-900 hover:bg-gray-600 rounded">Previous </button>
-        <button onClick={() => { markViewLater(); }} class="no-underline text-white py-2 px-2 font-medium mx-2 bg-indigo-900 hover:bg-indigo-600 rounded">Mark for view later</button>
-        <button onClick={() => { clearOption(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-medium mx-2  hover:bg-gray-400 rounded">Clear option</button>
+      <hr class="border-gray-400 mt-0 mb-0" />
+      <footer class={` ${infoOn ? 'hidden' : 'block'} flex flex-row   flex-wrap p-1 justify-around `}>
+        <button onClick={() => { prevQ(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Previous </button>
+        <button onClick={() => { markViewLater(); }} class="no-underline text-white py-0 px-2 font-normal mx-0 bg-indigo-900 hover:bg-indigo-600 rounded">Mark for view later</button>
+        <button onClick={() => { clearOption(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Clear option</button>
 
-        <button onClick={() => { nextQ(); }} class="no-underline text-white py-2 px-2 font-medium mx-2 bg-cyan-600 hover:bg-cyan-900 rounded">Save & next </button>
+        <button onClick={() => { nextQ(); }} class="no-underline text-white py-2 px-2 font-normal mx-0 bg-cyan-600 hover:bg-cyan-900 rounded">Save & next </button>
       </footer>
     </div>
   )
