@@ -55,7 +55,7 @@ export async function getStaticPaths() {
         questions,
       
       },
-     // revalidate:200,
+      revalidate:600,
     
     }
   } 
