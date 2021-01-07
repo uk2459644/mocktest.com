@@ -1,6 +1,7 @@
 import Axios from 'axios'
 
 import { useState,useEffect } from 'react';
+import {useRouter} from 'next/router';
 import ModalCard from '../../../components/Cards/ModalCard';
 import PracticeQuestionCard from '../../../components/Cards/PracticeQuestionCard';
 
@@ -35,7 +36,7 @@ export async function getStaticPaths() {
   
     // We'll pre-render only these paths at build time.
     // { fallback: false } means other routes should 404.
-    return { paths, fallback: false }
+    return { paths, fallback: true }
   }
   
   export async function getStaticProps({ params }) {
@@ -54,7 +55,7 @@ export async function getStaticPaths() {
         questions,
       
       },
-      revalidate:7200,
+     // revalidate:200,
     
     }
   } 
@@ -62,11 +63,24 @@ export async function getStaticPaths() {
 
   let elem;
 export default function QuestionPageRRBNTPC ({questions}){
-  const [qset,setQset] = useState(questions.questions)
-  const [questionNumber,setQuestionNumber] = useState(1)
-  const [useranswer,setUserAnswer]=useState(new Array(questions.questions.length).fill(''));
 
-  const [panelOn, setPanelOn] = useState(false);
+  const router=useRouter();
+
+  if(router.isFallback) {
+    return <h1>Loading...</h1>
+ }
+
+ if(!questions){
+
+  return <h1>No data</h1>;
+ }
+
+  const [qset,setQset] = useState(questions.questions)
+  const [qlength,setQlength] = useState(questions.questions.length-1)
+  const [questionNumber,setQuestionNumber] = useState(1)
+  // const [useranswer,setUserAnswer]=useState(new Array(questions.questions.length).fill(''));
+
+  // const [panelOn, setPanelOn] = useState(false);
 
   const [ontest,setOntest] = useState(false);
 
@@ -77,9 +91,10 @@ export default function QuestionPageRRBNTPC ({questions}){
 
   const [answerdata, setAnswerData] = useState(new Array(questions.questions.length-1).fill(null).map(()=>({
     id: '',
-    correct_ans:'',
-    user_ans:'',
+    correct_ans:'n',
+    user_ans:'m',
     status:'',
+    answered:false,
   })))
 
  console.log(`${ answerdata[0]}`);
@@ -133,23 +148,7 @@ const openFullscreenTr =() =>  {
       }
     }
 
-    const userAnswer = (correct_ans,user_ans,status) => {
-
-      let newArray=[...useranswer];
-      
-      newArray[questionNumber] ={
-        id: questionNumber,
-        correct_ans:correct_ans,
-        user_ans:user_ans,
-        status:status,
-      }
-  
-      setUserAnswer(newArray);
-      
-     // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
      
-    }
-  
     const userAnswerData = (correct_ans,user_ans,status) => {
 
       let newArray=[...answerdata];
@@ -159,6 +158,7 @@ const openFullscreenTr =() =>  {
         correct_ans:correct_ans,
         user_ans:user_ans,
         status:status,
+        answered:true,
       }
   
       setAnswerData(newArray);
@@ -170,6 +170,7 @@ const openFullscreenTr =() =>  {
 
       let correct_ans = useranswer[questionNumber].correct_ans;
       let user_ans=useranswer[questionNumber].user_ans;
+      let answered=useranswer[questionNumber].answered;
 
       let newArray=[...answerdata];
       
@@ -178,6 +179,7 @@ const openFullscreenTr =() =>  {
         correct_ans:correct_ans,
         user_ans:user_ans,
         status:'mv',
+        answered:answered,
       }
   
       setAnswerData(newArray);
@@ -188,7 +190,8 @@ const openFullscreenTr =() =>  {
     const clearOptionData = () => {
 
       let correct_ans = useranswer[questionNumber].correct_ans;
-      let user_ans=useranswer[questionNumber].user_ans;
+     // let user_ans=useranswer[questionNumber].user_ans;
+     // let answered=useranswer[questionNumber].answered;
 
       let newArray=[...answerdata];
       
@@ -197,6 +200,7 @@ const openFullscreenTr =() =>  {
         correct_ans:correct_ans,
         user_ans:'',
         status:'co',
+        answered:false,
       }
   
       setAnswerData(newArray);
@@ -205,44 +209,6 @@ const openFullscreenTr =() =>  {
     }
 
 
-    const markViewLater = () => {
-
-      let correct_ans = useranswer[questionNumber].correct_ans;
-      let user_ans=useranswer[questionNumber].user_ans;
-
-      let newArray=[...useranswer];
-      
-      newArray[questionNumber] ={
-        id: questionNumber,
-        correct_ans:correct_ans,
-        user_ans:user_ans,
-        status:'mv',
-      }
-  
-      setUserAnswer(newArray);
-      
-     // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
-    }
-
-    const clearOption = () => {
-
-      let correct_ans = useranswer[questionNumber].correct_ans;
-      let user_ans=useranswer[questionNumber].user_ans;
-
-      let newArray=[...useranswer];
-      
-      newArray[questionNumber] ={
-        id: questionNumber,
-        correct_ans:correct_ans,
-        user_ans:'',
-        status:'co',
-      }
-  
-      setUserAnswer(newArray);
-      
-     // alert(`some thing clicked  ${useranswer[questionNumber].user_ans}`);
-    }
-
   return(
       <div id="testpage" className="bg-white opacity-100">
         
@@ -250,7 +216,7 @@ const openFullscreenTr =() =>  {
                   qset.length > 0 && 
                   questionNumber !== 
                   qset.length &&
-                  useranswer.length > 0 ? (
+                  answerdata.length > 0 ? (
                     <div className={` ${ontest ? 'block' :'hidden'} `}>
                     
                       <PracticeQuestionCard
