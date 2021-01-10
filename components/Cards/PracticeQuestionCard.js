@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
+import Image from 'next/image'
 
 export default function PracticeQuestionCard({ question, useranswer, userAnswer, answerset,
-  markViewLater,openFullscreen, clearOption, nextQ, prevQ, setQuestionNumber }) {
+  markViewLater,openFullscreen, clearOption, nextQ, prevQ, setQuestionNumber,submitTest }) {
 
-  const [compOn, setCompOn] = useState(false);
+  const [compOn, setCompOn] = useState(true);
   const [infoOn, setInfoOn] = useState(false);
 
   
@@ -13,12 +14,8 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
     <div class="flex flex-col overflow-hidden h-screen ">
       <header class="pt-3 p-1 ">
         <div class="flex  flex-row flex-wrap  justify-around">
-          <div className={`${question.comprehension_show ? 'block' : 'hidden'}`}>
-            <button onClick={() => setCompOn(!compOn)} class={` ${compOn ? 'bg-cyan-400 border-cyan-400' : 'bg-white border-cyan-400'}  border-2 h-5 w-5 rounded-full ring-cyan-400 `}>
-            </button>
-            <a class="text-light   text-sm uppercase pl-2 font-semibold">comprehension</a>
-          </div>
-          <button class="no-underline text-white py-1  px-2 font-medium  bg-cyan-600 hover:bg-cyan-900 rounded">Submit </button>
+          
+          <button onClick={()=>{submitTest()}} class="no-underline text-white py-1  px-2 font-medium  bg-cyan-600 hover:bg-cyan-900 rounded">Submit </button>
           <a class="text-light flex-wrap text-sm uppercase pl-12 font-semibold">time</a>
           <div>
             <button onClick={() => setInfoOn(!infoOn)} class={` ${infoOn ? 'bg-cyan-400 border-cyan-400' : 'bg-white border-cyan-400'}  border-2 h-5 w-5 rounded-full ring-cyan-400 `}>
@@ -45,10 +42,24 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
       <main class="mb-auto ">
         <div class="flex flex-row  pt-3 ">
           <div class={`${infoOn ? 'hidden md:w-3/4 md:block' : 'w-full'} flex flex-col md:flex-row md:w-3/4 overflow-y-auto h-72 md:h-96`}>
+            
             {
+              question.comprehension_show ? (
+                <div>
+                   {
               question.comprehension_doc ? (
                 <div class={` ${compOn ? 'block' : 'hidden'} flex-1  text-md text-justify md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6 `}>
-                  comprehensiont doc
+                 <Image 
+                  src={question.comprehension}
+                  alt="comprehenionn photo"
+                  className="w-full h-auto overflow-y-auto"
+                  width={350}
+                  height={350}
+                 />
+                 {/* <img
+                 src={question.comprehension}
+                 alt="comprehenionn photo"
+                  /> */}
                 </div>
 
               ) : (
@@ -58,13 +69,21 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
 
                 )
             }
-
+                </div>
+              ):null
+            }
+           
+           
             <div class="flex-1  flex-wrap text-md text-justify md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6">
               {
                 question.question_doc ? (
-                  <p>
-                    doc file here
-                  </p>
+                  <Image 
+                  src={question.question}
+                  alt="question  photo"
+                  //className="w-full h-auto overflow-y-auto"
+                  width={350}
+                  height={350}
+                 />
 
                 ) : (
                     <p>
@@ -128,21 +147,21 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
                         <div class=" m-1 ">
                           {
                             answerset[index].status == 'mv' ? (
-                                <button onClick={()=>{setQuestionNumber(index+1)}} class="bg-indigo-500 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
+                                <button onClick={()=>{setQuestionNumber(index)}} class="bg-indigo-500 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
 
                             ):(
                               answerset[index].status == 'v' ? (
-                                <button onClick={()=>{setQuestionNumber(index+1)}} class="bg-green-400 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
+                                <button onClick={()=>{setQuestionNumber(index)}} class="bg-green-400 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
 
                               ) : (
                                 answerset[index].status == 'co' ? (
-                                  <button onClick={()=>{setQuestionNumber(index+1)}} class="bg-gray-100 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
+                                  <button onClick={()=>{setQuestionNumber(index)}} class="bg-gray-100 text-center text-gray-600 block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
   
                                 ) :(
 
                                 
                                 
-                                <button onClick={()=>{setQuestionNumber(index+1)}} class="bg-red-600 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
+                                <button onClick={()=>{setQuestionNumber(index)}} class="bg-red-600 text-center text-white block h-10 w-10 border-2 rounded-b-2xl">{index + 1} </button>
                                 )
                               )
                             )
