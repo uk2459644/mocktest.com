@@ -7,6 +7,8 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
   const [compOn, setCompOn] = useState(true);
   const [infoOn, setInfoOn] = useState(false);
 
+ 
+
   
 
  
@@ -48,7 +50,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
                 <div>
                    {
               question.comprehension_doc ? (
-                <div class={` ${compOn ? 'block' : 'hidden'} flex-1  text-md text-justify md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6 `}>
+                <div class={` ${compOn ? 'block' : 'hidden'} flex-1  text-md  md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6 `}>
                  <Image 
                   src={question.comprehension}
                   alt="comprehenionn photo"
@@ -63,8 +65,17 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
                 </div>
 
               ) : (
-                  <div class={` ${compOn ? 'block' : 'hidden'} flex-1  text-md text-justify md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6 `}>
-                    {question.comprehension}
+                  <div class={` ${compOn ? 'block' : 'hidden'} flex-1  text-md  md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6 `}>
+                   
+                    {
+                       question.comprehension.split("@@").map(q=>{
+                         return (
+                           <p>
+                             {q}
+                           </p>
+                         )
+                       })
+                       }
                   </div>
 
                 )
@@ -74,7 +85,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
             }
            
            
-            <div class="flex-1  flex-wrap text-md text-justify md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6">
+            <div class="flex-1  flex-wrap text-md  md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6">
               {
                 question.question_doc ? (
                   <Image 
@@ -87,11 +98,20 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
 
                 ) : (
                     <p>
-                      <h4 className="font-semibold">Q {question.question_number}</h4> {question.question}
+                      <h4 className="font-semibold">Q {question.question_number}</h4> 
+                      {
+                       question.question.split("@@").map(q=>{
+                         return (
+                           <p>
+                             {q}
+                           </p>
+                         )
+                       })
+                       }
                     </p>
                   )
               }
-              <div className="flex-col flex-wrap text-md text-justify md:text-md text-gray-700 font-light font-serif ">
+              <div className="flex-col flex-wrap text-md  md:text-md text-gray-700 font-light font-serif ">
                 <div className="flex items-start pt-4 flex-row">
                   <button onClick={() => { userAnswer(question.correct_opt, 'a', 'v') }}
                     className={`${useranswer.user_ans == 'a' ? 'bg-green-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>

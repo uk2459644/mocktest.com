@@ -10,7 +10,7 @@ import PieChart from '../../../components/Charts/pie-chart';
 import AnalysisFooter from '../../../components/Cards/AnalysisFooter';
 
 
-const fetchQuestions = async (params) => await Axios.get(`https://mocktestdjango-production.herokuapp.com/ssc-je-ee/${params.id}/`)
+const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/ssc-je-ee/${params.id}/`)
     .then(res => ({
         error: false,
         questions: res.data,
@@ -24,7 +24,7 @@ const fetchQuestions = async (params) => await Axios.get(`https://mocktestdjango
 
 export async function getStaticPaths() {
     // Call an external API endpoint to get posts
-    const res = await fetch('https://mocktestdjango-production.herokuapp.com/ssc-je-ee/')
+    const res = await fetch('https://backend-mock-test-crash.herokuapp.com/ssc-je-ee/')
     const tests = await res.json()
   
     // Get the paths we want to pre-render based on posts

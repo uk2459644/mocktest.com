@@ -2,8 +2,9 @@ import Axios from 'axios'
 import { useState } from 'react';
 import HomeNav from '../../components/NavBar/HomeNavBar';
 import Link from 'next/link'
+import useSWR from 'swr';
 
-const fetchPrevTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/previous-year-ssc-cgl/')
+const fetchPrevTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/previous-year-ssc-cgl/preview/')
     .then(res => ({
         error: false,
         prev_testlist: res.data,
@@ -15,7 +16,7 @@ const fetchPrevTestList = async () => await Axios.get('https://backend-mock-test
 
     ));
 
-const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/ssc-cgl-testlist/')
+const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/ssc-cgl-testlist/preview/')
     .then(res => ({
         error: false,
         testlist: res.data,
@@ -27,7 +28,7 @@ const fetchTestList = async () => await Axios.get('https://backend-mock-test-cra
 
     ));
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     const data = await fetchPrevTestList();
     const data1 = await fetchTestList();
@@ -40,13 +41,15 @@ export async function getStaticProps() {
         props: {
             prev_testlist: data,
             testlist: data1,
-        },
-        revalidate: 7200,
+        }
+       
 
     }
 }
 
-export default function SSCCGLIndex({ prev_testlist, testlist }){
+export default function SSCCGLPreview({testlist,prev_testlist}){
+
+    //const {testlist} = useSWR('api/testlist',fetchTestList,{initialData:testlist});
 
     const [latTest, setLetTest] = useState(true);
     const [prevTest, setPrevTest] = useState(false);
@@ -86,7 +89,7 @@ export default function SSCCGLIndex({ prev_testlist, testlist }){
                                         testlist.testlist.map(test => (
                                             <div>
                                                 <span class="flex shadow-md mb-5 text-xs m-4">
-                                                    <Link href={`/ssc-cgl/${test.keyword}/${test.id}`}>
+                                                    <Link href={`/ssc-cgl/preview/${test.keyword}/${test.id}`}>
                                                         <button class="bg-indigo-500 uppercase font-semibold w-44 text-center text-gray-200 p-3 px-5 rounded-l">Take Test</button>
                                                     </Link>
 
@@ -117,7 +120,7 @@ export default function SSCCGLIndex({ prev_testlist, testlist }){
                                         prev_testlist.prev_testlist.map(test => (
                                             <div>
                                                 <span class="flex shadow-md mb-5 text-xs m-4">
-                                                    <Link href={`/ssc-cgl/${test.keyword}/${test.id}`}>
+                                                    <Link href={`/ssc-cgl/preview/${test.keyword}/${test.id}`}>
                                                         <button class="bg-gray-900 uppercase font-semibold w-44 text-center text-gray-200 p-3 px-5 rounded-l">Take Test</button>
                                                     </Link>
 

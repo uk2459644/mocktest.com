@@ -3,7 +3,7 @@ import { useState } from 'react';
 import HomeNav from '../../components/NavBar/HomeNavBar';
 import Link from 'next/link'
 
-const fetchPrevTestList = async () => await Axios.get('https://mocktestdjango-production.herokuapp.com/previous-year-rrb-group-d/')
+const fetchPrevTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/previous-year-rrb-group-d/')
     .then(res => ({
         error: false,
         prev_testlist: res.data,
@@ -15,7 +15,7 @@ const fetchPrevTestList = async () => await Axios.get('https://mocktestdjango-pr
 
     ));
 
-const fetchTestList = async () => await Axios.get('https://mocktestdjango-production.herokuapp.com/rrb-group-d/')
+const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/rrb-group-d/')
     .then(res => ({
         error: false,
         testlist: res.data,

@@ -2,15 +2,16 @@ import Axios from 'axios'
 
 import { useState,useEffect } from 'react';
 import {useRouter} from 'next/router';
-import ModalCard from '../../../components/Cards/ModalCard';
-import PracticeQuestionCard from '../../../components/Cards/PracticeQuestionCard';
-import AnalysisCard from '../../../components/Cards/AnalysisCard';
-import VerticalBarChart from '../../../components/Charts/vertical-bar-chart';
-import PieChart from '../../../components/Charts/pie-chart';
-import AnalysisFooter from '../../../components/Cards/AnalysisFooter';
+
+import PracticeQuestionCard from '../../../../components/Cards/PracticeQuestionCard';
+import AnalysisCard from '../../../../components/Cards/AnalysisCard';
+import VerticalBarChart from '../../../../components/Charts/vertical-bar-chart';
+import PieChart from '../../../../components/Charts/pie-chart';
+import AnalysisFooter from '../../../../components/Cards/AnalysisFooter';
+import ModalCard from '../../../../components/Cards/ModalCard';
 
 
-const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/rrb-ntpc/${params.id}/`)
+const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/ssc-cgl/${params.id}/`)
     .then(res => ({
         error: false,
         questions: res.data,
@@ -22,28 +23,28 @@ const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-t
 
     ));
 
-export async function getStaticPaths() {
-    // Call an external API endpoint to get posts
-    const res = await fetch('https://backend-mock-test-crash.herokuapp.com/rrb-ntpc/')
-    const tests = await res.json()
+// export async function getStaticPaths() {
+//     // Call an external API endpoint to get posts
+//     const res = await fetch('https://backend-mock-test-crash.herokuapp.com/ssc-cgl-testlist/')
+//     const tests = await res.json()
   
-    // Get the paths we want to pre-render based on posts
-    const paths = tests.map((post) => ({
-      params: { 
+//     // Get the paths we want to pre-render based on posts
+//     const paths = tests.map((post) => ({
+//       params: { 
       
-      id:post.id.toString(),
+//       id:post.id.toString(),
      
-      keyword:post.keyword,
+//       keyword:post.keyword,
      
-  },
-    }))
+//   },
+//     }))
   
-    // We'll pre-render only these paths at build time.
-    // { fallback: false } means other routes should 404.
-    return { paths, fallback: true }
-  }
+//     // We'll pre-render only these paths at build time.
+//     // { fallback: false } means other routes should 404.
+//     return { paths, fallback: true }
+//   }
   
-  export async function getStaticProps({ params }) {
+  export async function getServerSideProps({ params }) {
     // params contains the post `id`.
     // If the route is like /posts/1, then params.id is 1
     //const res = await fetch(`https://premenv.herokuapp.com/singleshopdetail/${params.id}`)
@@ -58,15 +59,14 @@ export async function getStaticPaths() {
     return { props: {
         questions,
        
-      },
-      revalidate:600,
+      }
     
     }
   } 
 
 
   let elem;
-export default function QuestionPageRRBNTPC ({questions})
+export default function QuestionPageSSCCGL ({questions})
 {
 
   const router=useRouter();
@@ -353,6 +353,7 @@ function closeFullscreen() {
                 }
                
                 <div className={` ${!ontest && !analysis_bool ? 'block' :'hidden'} `}>
+                 
                   <ModalCard
                   openFullscreen={openFullscreenTr}
                    />
@@ -386,7 +387,7 @@ function closeFullscreen() {
                       />
                       </div>
                       <AnalysisFooter 
-                      link="/rrb-ntpc/rrb-ntpc-index"
+                      link="/ssc-cgl/ssc-cgl-index"
                        />
                 </div>
   </div>
