@@ -41,7 +41,7 @@ export async function getStaticProps() {
             prev_testlist: data,
             testlist: data1,
         },
-        revalidate: 600,
+        revalidate: 21600,
 
     }
 }
