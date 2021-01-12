@@ -17,10 +17,10 @@ export default function OurTeam(){
       {/* <!-- Trainer Card Wrapper --> */}
       <div className="flex flex-wrap">
         {/* <!-- Card 1 --> */}
-        <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
+        <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-16" data-aos="flip-right">
           <div className="px-6">
             <Image 
-            src="https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" 
+            src="/upendra.png" 
             alt="team photo 1"
             className="shadow-lg rounded max-w-full mx-auto"
             width={250}
@@ -35,8 +35,8 @@ export default function OurTeam(){
         // style="max-width: 250px"
              /> */}
             <div className="pt-6 text-center">
-              <h5 className="text-xl font-bold">Member Name</h5>
-              <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">educational qualification / post name</p>
+              <h5 className="text-xl font-bold">Upendra Kumar</h5>
+              <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">B. Tech. (expected-2022) / ceo , founder</p>
               <div className="mt-6">
                 <button className="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
                   <i className="fab fa-twitter"></i></button
@@ -48,10 +48,10 @@ export default function OurTeam(){
           </div>
         </div>
         {/* <!-- Card 2 --> */}
-        <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
+        <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-16" data-aos="flip-right">
           <div className="px-6">
           <Image 
-            src="https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" 
+            src="/upendra.png" 
             alt="team photo 1"
             className="shadow-lg rounded max-w-full mx-auto"
             width={250}
@@ -79,12 +79,12 @@ export default function OurTeam(){
           </div>
         </div>
         {/* <!-- Card 3 --> */}
-        <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-4" data-aos="flip-right">
+        <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-16 md:px-16" data-aos="flip-right">
           <div className="px-6">
           <Image 
-            src="https://images.unsplash.com/photo-1549476464-37392f717541?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" 
+            src="/upendra.png" 
             alt="team photo 1"
-            className="shadow-lg rounded max-w-full mx-auto"
+            className="shadow-lg rounded max-w-full mx-auto "
             width={250}
             height={350}
             />
