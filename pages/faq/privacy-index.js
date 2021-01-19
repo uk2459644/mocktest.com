@@ -3,7 +3,7 @@ import { useState } from 'react';
 import HomeNav from '../../components/NavBar/HomeNavBar';
 
 
-const fetchPolicies = async () => await Axios.get('https://mocktestdjango-production.herokuapp.com/privacy-policy/')
+const fetchPolicies = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/privacy-policy/')
     .then(res => ({
         error: false,
         policylist: res.data,
