@@ -64,7 +64,7 @@ export default function PreviewDynamicTestCatIndex({catlist}){
                                   key={index}
 
                                   cat={cat.category}
-                                  link={`/dynamic/preview/${cat.preview_previous_year_keyword}/${cat.preview_keyword}`}
+                                  link={`/dynamic/preview/${cat.previous_year_keyword}/${cat.keyword}`}
                                   
                                   />
                                   </div>
