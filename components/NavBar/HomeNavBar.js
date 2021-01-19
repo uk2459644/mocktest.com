@@ -47,7 +47,7 @@ export default function HomeNav() {
             <Link href="/">
             <a  className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
             </Link>
-            <Link href="/category/mockcat">
+            <Link href="/dynamic/dynamic-test-cate-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mock-Tests</a>
             </Link>
             <Link href="/ourteam/team">
@@ -112,7 +112,7 @@ export default function HomeNav() {
       <Link href="/">
             <a  className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-sm font-medium">Home</a>
             </Link>
-            <Link href="/category/mockcat">
+            <Link href="/dynamic/dynamic-test-cate-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mock-Tests</a>
             </Link>
             <Link href="/ourteam/team">

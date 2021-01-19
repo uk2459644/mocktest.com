@@ -13,7 +13,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
 
  
   return (
-    <div class="flex flex-col overflow-hidden h-screen ">
+    <div class="">
       <header class="pt-3 p-1 ">
         <div class="flex  flex-row flex-wrap  justify-around">
           
@@ -114,19 +114,19 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
               <div className="flex-col flex-wrap text-md  md:text-md text-gray-700 font-light font-serif ">
                 <div className="flex items-start pt-4 flex-row">
                   <button onClick={() => { userAnswer(question.correct_opt, 'a', 'v') }}
-                    className={`${useranswer.user_ans == 'a' ? 'bg-green-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
+                    className={`${useranswer.user_ans == 'a' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
                   <p className="ml-2">{question.opt_a}</p>
                 </div>
                 <div className="flex items-start pt-4">
-                  <button onClick={() => { userAnswer(question.correct_opt, 'b', 'v') }} className={`${useranswer.user_ans == 'b' ? 'bg-green-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
+                  <button onClick={() => { userAnswer(question.correct_opt, 'b', 'v') }} className={`${useranswer.user_ans == 'b' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
                   <p className="ml-2">{question.opt_b}</p>
                 </div>
                 <div className="flex items-start pt-4">
-                  <button onClick={() => { userAnswer(question.correct_opt, 'c', 'v') }} className={`${useranswer.user_ans == 'c' ? 'bg-green-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
+                  <button onClick={() => { userAnswer(question.correct_opt, 'c', 'v') }} className={`${useranswer.user_ans == 'c' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
                   <p className="ml-2">{question.opt_c}</p>
                 </div>
                 <div className="flex items-start pt-4">
-                  <button onClick={() => { userAnswer(question.correct_opt, 'd', 'v') }} className={`${useranswer.user_ans == 'd' ? 'bg-green-500' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
+                  <button onClick={() => { userAnswer(question.correct_opt, 'd', 'v') }} className={`${useranswer.user_ans == 'd' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
                   <p className="ml-2">{question.opt_d}</p>
                 </div>
               </div>

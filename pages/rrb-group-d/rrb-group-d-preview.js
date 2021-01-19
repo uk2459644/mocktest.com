@@ -57,13 +57,13 @@ export default function RRBGROUPDPrivew({ prev_testlist, testlist }) {
                         <button onClick={() => {
                             setLetTest(true)
                             setPrevTest(false)
-                        }} className={` no-underline text-white py-2 px-2 font-medium mr-2 ml-4 bg-cyan-600 hover:bg-cyan-900`} >
+                        }} className={` no-underline text-white py-2 px-2 font-medium mr-2 ml-4 rounded-sm bg-cyan-600 hover:bg-cyan-900`} >
                             Latest tests
                         </button>
                         <button onClick={() => {
                             setLetTest(false)
                             setPrevTest(true)
-                        }} className={`no-underline text-white py-2 px-2 font-medium mx-2 bg-gray-900 hover:bg-gray-600 `} >
+                        }} className={`no-underline text-white py-2 px-2 font-medium mx-2 rounded-sm bg-gray-900 hover:bg-gray-600 `} >
                             Previous year tests
                         </button>
 

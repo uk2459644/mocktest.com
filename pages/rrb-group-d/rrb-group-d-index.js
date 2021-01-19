@@ -49,34 +49,56 @@ export async function getStaticProps() {
 export default function RRBGROUPDIndex({ prev_testlist, testlist }) {
     const [latTest, setLetTest] = useState(true);
     const [prevTest, setPrevTest] = useState(false);
+
+    const [lethindi,setLethindi] = useState(false);
+    const [leteng,setLeteng] = useState(false);
+
+    const [prevhindi,setPrevhindi] = useState(false);
+    const [preveng,setPreveng] = useState(false);
+    
+    
+
     return (
         <div>
             <HomeNav />
             <section >
                 <div className="container mx-auto py-4">
-
                     <nav className="flex">
                         <button onClick={() => {
                             setLetTest(true)
                             setPrevTest(false)
-                        }} className={` no-underline text-white py-2 px-2 font-medium mr-2 ml-4 bg-cyan-600 hover:bg-cyan-900`} >
+                        }} className={`${latTest ? 'bg-cyan-600 text-yellow-400 ' : 'bg-cyan-900 text-white'} no-underline py-2 px-2 font-medium mr-2 ml-4 rounded-sm  hover:bg-cyan-900`} >
                             Latest tests
                         </button>
                         <button onClick={() => {
                             setLetTest(false)
                             setPrevTest(true)
-                        }} className={`no-underline text-white py-2 px-2 font-medium mx-2 bg-gray-900 hover:bg-gray-600 `} >
+                        }} className={`${prevTest ? 'bg-gray-900 text-yellow-400 ' : 'bg-gray-600 text-white'} no-underline py-2 px-2 font-medium mx-2 rounded-sm  hover:bg-gray-600 `} >
                             Previous year tests
                         </button>
-
                     </nav>
                 </div>
             </section>
-            <div>
+            <section className={`${latTest ? 'block' : 'hidden'}`}>
+                <div class="container mx-auto ">
+                    <nav class="flex">
+                        <button onClick={()=>{setLeteng(true); setLethindi(false)}} class={` ${leteng ? 'text-yellow-400' : 'text-white'} no-underline py-2 px-2 font-medium mr-2 ml-4 rounded-sm bg-cyan-600 hover:bg-cyan-900`}>ENGLISH</button>
+                        <button onClick={()=>{setLethindi(true); setLeteng(false)}} class={` ${lethindi ? 'text-yellow-400' : 'text-white'} no-underline py-2 px-2 font-medium mr-2 ml-2 rounded-sm bg-cyan-600 hover:bg-cyan-900 `}>HINDI</button>
+                    </nav>
+                </div>
+            </section>
+            <section className={`${prevTest ? 'block' : 'hidden'}`}>
+                <div class="container mx-auto ">
+                    <nav class="flex">
+                        <button onClick={()=>{setPreveng(true); setPrevhindi(false)}} class={` ${preveng ? 'text-yellow-400' : 'text-white'} no-underline  py-2 px-2 font-medium mr-2 ml-4 rounded-sm bg-gray-900 hover:bg-gray-600 `}>ENGLISH</button>
+                        <button onClick={()=>{setPreveng(false); setPrevhindi(true)}} class={` ${prevhindi ? 'text-yellow-400' : 'text-white'} no-underline py-2 px-2 font-medium mr-2 ml-2 rounded-sm bg-gray-900 hover:bg-gray-600 `}>HINDI</button>
+                    </nav>
+                </div>
+            </section>
+            <div className={`${latTest ? 'block' : 'hidden' }`}>
                 <div className="flex flex-col rounded-md m-4 p-4   ">
-                    <div className={`${latTest ? 'block' : 'hidden'} flex-1  justify-items-center  `}>
-                        <h4 className="text-center font-bold uppercase tracking-wider ">Latest test series</h4>
-
+                    <div className={`${leteng ? 'block' : 'hidden'} flex-1  justify-items-center  `}>
+                        <h4 className="text-center font-bold uppercase tracking-wider ">English tests series</h4>
                         {
                             testlist.testlist.length > 0 ? (
 
@@ -91,7 +113,7 @@ export default function RRBGROUPDIndex({ prev_testlist, testlist }) {
 
                                                     <span class="uppercase font-semibold field text-sm text-gray-600 p-2 px-3 rounded-r w-full">{test.test_name}</span>
                                                 </span>
-                                                
+
                                             </div>)
                                         )
                                     }
@@ -106,8 +128,8 @@ export default function RRBGROUPDIndex({ prev_testlist, testlist }) {
 
                         }
                     </div>
-                    <div className={`${prevTest ? 'block' : 'hidden'} flex-1 justify-items-center `}>
-                        <h4 className="text-center font-bold uppercase tracking-wider ">Previous year tests</h4>
+                    <div className={`${lethindi ? 'block' : 'hidden'} flex-1 justify-items-center `}>
+                        <h4 className="text-center font-bold uppercase tracking-wider ">Hindi tests series</h4>
                         {
                             prev_testlist.prev_testlist.length > 0 ? (
 

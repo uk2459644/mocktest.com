@@ -229,7 +229,7 @@ function closeFullscreen() {
 
       let newArray=[...answerdata];
 
-      if(correct_ans == user_ans){
+      if(correct_ans === user_ans){
         let marks = qset[questionNumber].correct_mark;
 
         newArray[questionNumber] ={
