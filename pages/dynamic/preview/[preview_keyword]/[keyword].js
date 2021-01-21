@@ -42,12 +42,13 @@ export async function getServerSideProps({ params }) {
         props: {
             prev_testlist: data,
             testlist: data1,
+            keyword:params.keyword,
         }
 
     }
 }
 
-export default function DynamicTestList({ prev_testlist, testlist }){
+export default function DynamicTestList({ prev_testlist, testlist,keyword }){
     const [latTest, setLetTest] = useState(true);
     const [prevTest, setPrevTest] = useState(false);
 
@@ -107,7 +108,7 @@ export default function DynamicTestList({ prev_testlist, testlist }){
                                         testlist.testlist.map(test => (
                                             <div>
                                                 <span class="flex shadow-md mb-5 text-xs m-4">
-                                                    <Link href={`/dynamic/preview-test/${test.keyword}/${test.id}`}>
+                                                    <Link href={`/dynamic/preview-test/${keyword}/${test.id}`}>
                                                         <button class="bg-indigo-500 uppercase font-semibold w-44 text-center text-gray-200 p-3 px-5 rounded-l">Take Test</button>
                                                     </Link>
 

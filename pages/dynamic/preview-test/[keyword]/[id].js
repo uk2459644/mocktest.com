@@ -10,7 +10,7 @@ import PieChart from '../../../../components/Charts/pie-chart';
 import AnalysisFooter from '../../../../components/Cards/AnalysisFooter';
 
 
-const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/rrb-group-d/${params.id}/`)
+const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/${params.keyword}/${params.id}/`)
     .then(res => ({
         error: false,
         questions: res.data,
