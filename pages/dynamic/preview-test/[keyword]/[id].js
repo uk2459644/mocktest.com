@@ -98,6 +98,10 @@ export default function QuestionPageRRBGROUPD ({questions})
 
   const [answerdata, setAnswerData] = useState(new Array(questions.questions.length).fill(null).map(()=>({
     id: '',
+    comp_text:'',
+    q_text:'',
+    correct_text:'',
+    user_text:'',
     correct_ans:'n',
     user_ans:'m',
     status:'',
@@ -224,15 +228,22 @@ function closeFullscreen() {
 
    
      
-    const userAnswerData = (correct_ans,user_ans,status) => {
+    const userAnswerData = (correct_ans,user_ans,status,user_text) => {
 
       let newArray=[...answerdata];
 
       if(correct_ans == user_ans){
         let marks = qset[questionNumber].correct_mark;
+        let comp_text=qset[questionNumber].comprehension;
+        let q_text=qset[questionNumber].question;
+        let correct_text=qset[questionNumber].correct_ans;
 
         newArray[questionNumber] ={
           id: questionNumber,
+          comp_text:comp_text,
+          q_text:q_text,
+          correct_text:correct_text,
+          user_text:user_text,
           correct_ans:correct_ans,
           user_ans:user_ans,
           status:status,
@@ -247,9 +258,17 @@ function closeFullscreen() {
       }else{
 
         let marks = qset[questionNumber].negative_mark;
+        let comp_text=qset[questionNumber].comprehension;
+        let q_text=qset[questionNumber].question;
+        let correct_text=qset[questionNumber].correct_ans;
+
 
         newArray[questionNumber] ={
           id: questionNumber,
+          comp_text:comp_text,
+          q_text:q_text,
+          correct_text:correct_text,
+          user_text:user_text,
           correct_ans:correct_ans,
           user_ans:user_ans,
           status:status,
@@ -273,11 +292,20 @@ function closeFullscreen() {
       let marks = answerdata[questionNumber].marks;
       let correct_st= answerdata[questionNumber].coorect;
       let include_st = answerdata[questionNumber].include;
+      let comp_text=qset[questionNumber].comprehension;
+      let q_text=qset[questionNumber].question;
+      let correct_text=qset[questionNumber].correct_text;
+      let user_text=qset[questionNumber].user_text;
+
 
       let newArray=[...answerdata];
 
       newArray[questionNumber] ={
         id: questionNumber,
+        comp_text:comp_text,
+        q_text:q_text,
+        correct_text:correct_text,
+        user_text:user_text,
         correct_ans:correct_ans,
         user_ans:user_ans,
         status:'mv',
@@ -293,6 +321,10 @@ function closeFullscreen() {
     const clearOptionData = () => {
 
       let correct_ans = answerdata[questionNumber].correct_ans;
+      let comp_text=qset[questionNumber].comprehension;
+      let q_text=qset[questionNumber].question;
+      let correct_text=qset[questionNumber].correct_text;
+
      // let user_ans=useranswer[questionNumber].user_ans;
      // let answered=useranswer[questionNumber].answered;
 
@@ -300,6 +332,10 @@ function closeFullscreen() {
       
       newArray[questionNumber] ={
         id: questionNumber,
+        comp_text:comp_text,
+        q_text:q_text,
+        correct_text:correct_text,
+        user_text:'',
         correct_ans:correct_ans,
         user_ans:'',
         status:'co',
