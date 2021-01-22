@@ -51,13 +51,31 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
                    {
               question.comprehension_doc ? (
                 <div class={` ${compOn ? 'block' : 'hidden'} flex-1  text-md  md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6 `}>
-                 <Image 
-                  src={question.comprehension}
-                  alt="comprehenionn photo"
-                  className="w-full h-auto overflow-y-auto"
-                  width={350}
-                  height={350}
-                 />
+                
+                  {
+                       question.comprehension.split("@@").map(q=>{
+                         return (
+                           <div>
+                             {
+                               q.includes('https://firebasestorage') ? (
+                                <Image 
+                                src={q}
+                                alt="comprehenionn photo"
+                                className="w-full h-auto overflow-y-auto"
+                                width={350}
+                                height={350}
+                               />
+
+                               ):(
+                                 <p>
+                                   {q}
+                                 </p>
+                               )
+                             }
+                             </div>
+                         )
+                       })
+                       }
                  {/* <img
                  src={question.comprehension}
                  alt="comprehenionn photo"
@@ -88,13 +106,34 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
             <div class="flex-1  flex-wrap text-md  md:text-md text-gray-700 font-md font-serif pl-12 pr-12 pt-6">
               {
                 question.question_doc ? (
-                  <Image 
-                  src={question.question}
-                  alt="question  photo"
-                  //className="w-full h-auto overflow-y-auto"
-                  width={350}
-                  height={350}
-                 />
+                  <div>
+                     <h4 className="font-semibold">Q {question.question_number}</h4>
+                     {
+                       question.question.split("@@").map(q=>{
+                         return (
+                           <div>
+                             {
+                             q.includes('https://firebasestorage') ? (
+                              <Image 
+                              src={q}
+                              alt="comprehenionn photo"
+                              className="w-full h-auto overflow-y-auto"
+                              width={350}
+                              height={350}
+                             />
+
+                             ):(
+                               <p>
+                                 {q}
+                                 </p>
+                             )
+                             }
+                           </div>
+                         )
+                       })
+                       }
+                 
+                 </div>
 
                 ) : (
                     <p>
@@ -115,19 +154,63 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
                 <div className="flex items-start pt-4 flex-row">
                   <button onClick={() => { userAnswer(question.correct_opt, 'a', 'v') }}
                     className={`${useranswer.user_ans == 'a' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
-                  <p className="ml-2">{question.opt_a}</p>
+                 {
+                   question.opt_a.includes('https://firebasestorage') ? (
+                     <Image
+                     src={question.opt_a}
+                     width={100}
+                     height={50} />
+                   ) :
+                   (
+                    <p className="ml-2">{question.opt_a}</p>
+                   )
+                 }
+                 
                 </div>
                 <div className="flex items-start pt-4">
                   <button onClick={() => { userAnswer(question.correct_opt, 'b', 'v') }} className={`${useranswer.user_ans == 'b' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
-                  <p className="ml-2">{question.opt_b}</p>
+                  {
+                   question.opt_b.includes('@@@') ? (
+                     <Image
+                     src={question.opt_b}
+                     width={100}
+                     height={50} />
+                   ) :
+                   (
+                    <p className="ml-2">{question.opt_b}</p>
+                   )
+                 }
+                 
                 </div>
                 <div className="flex items-start pt-4">
                   <button onClick={() => { userAnswer(question.correct_opt, 'c', 'v') }} className={`${useranswer.user_ans == 'c' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
-                  <p className="ml-2">{question.opt_c}</p>
+                  {
+                   question.opt_c.includes('https://firebasestorage') ? (
+                     <Image
+                     src={question.opt_c}
+                     width={100}
+                     height={50} />
+                   ) :
+                   (
+                    <p className="ml-2">{question.opt_c}</p>
+                   )
+                 }
+                 
                 </div>
                 <div className="flex items-start pt-4">
                   <button onClick={() => { userAnswer(question.correct_opt, 'd', 'v') }} className={`${useranswer.user_ans == 'd' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
-                  <p className="ml-2">{question.opt_d}</p>
+                  {
+                   question.opt_d.includes('https://firebasestorage') ? (
+                     <Image
+                     src={question.opt_d}
+                     width={100}
+                     height={50} />
+                   ) :
+                   (
+                    <p className="ml-2">{question.opt_d}</p>
+                   )
+                 }
+                  
                 </div>
               </div>
 
