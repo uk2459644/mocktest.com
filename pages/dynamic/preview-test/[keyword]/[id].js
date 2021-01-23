@@ -8,6 +8,7 @@ import AnalysisCard from '../../../../components/Cards/AnalysisCard';
 import VerticalBarChart from '../../../../components/Charts/vertical-bar-chart';
 import PieChart from '../../../../components/Charts/pie-chart';
 import AnalysisFooter from '../../../../components/Cards/AnalysisFooter';
+import AnalysisQuestionCard from '../../../../components/Cards/AnalysisQuestionCard';
 
 
 const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/${params.keyword}/${params.id}/`)
@@ -90,6 +91,7 @@ export default function QuestionPageRRBGROUPD ({questions})
   const [ontest,setOntest] = useState(false);
   const [analysis_bool,setAnalysis_bool]= useState(false);
   const [analysis_data,setAnalysisData] = useState({});
+  const [analysis_answer_data,setAnalysisAnswerData]=useState(null);
 
  // let elem =document.getElementById('testpage');
 
@@ -154,6 +156,7 @@ export default function QuestionPageRRBGROUPD ({questions})
 
     setAnalysis_bool(true);
     setAnalysisData(submit_test_data);
+    setAnalysisAnswerData(answerdata);
     setOntest(false);
     closeFullscreen();
     console.log(`${submit_test_data} and  ${submit_test_data.total_question} attempt ${submit_test_data.attempt_question}
@@ -236,7 +239,7 @@ function closeFullscreen() {
         let marks = qset[questionNumber].correct_mark;
         let comp_text=qset[questionNumber].comprehension;
         let q_text=qset[questionNumber].question;
-        let correct_text=qset[questionNumber].correct_ans;
+        let correct_text=qset[questionNumber].correct_text;
 
         newArray[questionNumber] ={
           id: questionNumber,
@@ -260,7 +263,7 @@ function closeFullscreen() {
         let marks = qset[questionNumber].negative_mark;
         let comp_text=qset[questionNumber].comprehension;
         let q_text=qset[questionNumber].question;
-        let correct_text=qset[questionNumber].correct_ans;
+        let correct_text=qset[questionNumber].correct_text;
 
 
         newArray[questionNumber] ={
@@ -423,6 +426,27 @@ function closeFullscreen() {
                       <AnalysisFooter 
                       link="/rrb-group-d/rrb-group-d-index"
                        />
+                       <div>
+                         {
+                           analysis_answer_data !== null ? (
+                             <div>
+                               {analysis_answer_data.map((question,index)=>{
+                           return (
+                             <div>
+                               <AnalysisQuestionCard
+                                key={index} 
+                                question={question}
+                                />
+                               </div>
+                           )
+                         })}
+
+                               </div>
+
+                           ):null
+                         }
+                         
+                       </div>
                 </div>
   </div>
   )
