@@ -109,7 +109,7 @@ export default function StaticTestList({ prev_testlist, testlist ,keyword}){
                                         testlist.testlist.map(test => (
                                             <div>
                                                 <span class="flex shadow-md mb-5 text-xs m-4">
-                                                    <Link href={`/dynamic/preview-test/${keyword}/${test.id}`}>
+                                                    <Link href={`/dynamic/preview-test/${keyword}/${test.test_time}/${test.id}`}>
                                                         <button class="bg-indigo-500 uppercase font-semibold w-44 text-center text-gray-200 p-3 px-5 rounded-l">Take Test</button>
                                                     </Link>
 
@@ -140,7 +140,7 @@ export default function StaticTestList({ prev_testlist, testlist ,keyword}){
                                         prev_testlist.prev_testlist.map(test => (
                                             <div>
                                                 <span class="flex shadow-md mb-5 text-xs m-4">
-                                                    <Link href={`/dynamic/preview-test/${keyword}/${test.id}`}>
+                                                    <Link href={`/dynamic/preview-test/${keyword}/${test.test_time}/${test.id}`}>
                                                         <button class="bg-gray-900 uppercase font-semibold w-44 text-center text-gray-200 p-3 px-5 rounded-l">Take Test</button>
                                                     </Link>
 

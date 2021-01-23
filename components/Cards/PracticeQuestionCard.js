@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
-import Image from 'next/image'
+import Image from 'next/image';
+import { CountdownCircleTimer } from 'react-countdown-circle-timer';
+
 
 export default function PracticeQuestionCard({ question, useranswer, userAnswer, answerset,
-  markViewLater,openFullscreen, clearOption, nextQ, prevQ, setQuestionNumber,submitTest }) {
+  markViewLater,openFullscreen, clearOption, nextQ, prevQ, setQuestionNumber,submitTest ,test_time}) {
 
   const [compOn, setCompOn] = useState(true);
   const [infoOn, setInfoOn] = useState(false);
@@ -18,7 +20,32 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
         <div class="flex  flex-row flex-wrap  justify-around">
           
           <button onClick={()=>{submitTest()}} class="no-underline text-white py-1  px-2 font-medium  bg-cyan-600 hover:bg-cyan-900 rounded">Submit </button>
-          <a class="text-light flex-wrap text-sm uppercase pl-12 font-semibold">time</a>
+          <a class="text-light flex-wrap text-sm uppercase pl-12 font-semibold">
+      <CountdownCircleTimer
+    isPlaying
+    duration={test_time*60}
+    onComplete={()=>{
+      submitTest();
+    }}
+    
+    size={60}
+    strokeWidth={4}
+    colors={[
+      ['#004777', 0.33],
+      ['#F7B801', 0.33],
+      ['#A30000', 0.33],
+    ]}
+  > 
+   {({ remainingTime }) => {
+     const hours = Math.floor(remainingTime / 3600)
+     const minutes = Math.floor((remainingTime % 3600) / 60)
+     const seconds = remainingTime % 60
+   
+     return `${hours}:${minutes}:${seconds}`
+
+   }}
+  </CountdownCircleTimer>
+              </a>
           <div>
             <button onClick={() => setInfoOn(!infoOn)} class={` ${infoOn ? 'bg-cyan-400 border-cyan-400' : 'bg-white border-cyan-400'}  border-2 h-5 w-5 rounded-full ring-cyan-400 `}>
             </button>
@@ -300,7 +327,14 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
         </div>
 
       </main>
-      <hr class="border-gray-400 mt-0 mb-0 " />
+     <div style={{
+        position:"fixed",
+        bottom:0,
+        display:"flex",
+        flexDirection:"row"
+      }}>
+         <hr class="border-gray-400 mt-0 mb-2" />
+      
       <footer class={` ${infoOn ? 'hidden  md:grid ' : 'block  '}  grid grid-cols-3 grid-row-2 gap-2 md:grid-cols-5   md:grid-rows-1 md:gap-6 p-2 md:p-2 `}>
         <button onClick={() => { prevQ(); }} class="no-underline text-gray-900 border-2 py-2 px-2 font-normal mx-0  hover:bg-gray-400 rounded">Previous </button>
         <button onClick={() => { markViewLater(); }} class="no-underline text-white py-0 px-2 font-normal mx-0 bg-indigo-900 hover:bg-indigo-600 rounded">Mark for view later</button>
@@ -309,6 +343,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
 
         <button onClick={() => { nextQ(); }} class="no-underline text-white py-2 px-2 font-normal mx-0 bg-cyan-600 hover:bg-cyan-900 rounded ">Save & next </button>
       </footer>
+      </div>
     </div>
   )
 }
