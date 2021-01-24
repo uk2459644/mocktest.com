@@ -245,6 +245,8 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
           </div>
           <div class={` ${infoOn ? 'w-full  md:w-1/3 ' : 'hidden'}   border-l-2 `} >
             <div class="m-2  flex-col flex-wrap text-md text-justify md:text-md text-gray-700 font-light font-serif">
+               <p className="ml-2 text-green-600"> Correct Mark : {question.correct_mark}</p>
+               <p className="ml-2 text-red-600"> Negative Mark : {question.negative_mark}</p>
               <div class="flex items-start pt-2 flex-row">
                 <button class="bg-green-400 text-center text-white block h-10 w-10 border-2 rounded-r-2xl"></button>
                 <p className="ml-2"> Answered</p>
