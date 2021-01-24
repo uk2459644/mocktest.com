@@ -160,7 +160,7 @@ export default function QuestionPageRRBGROUPD({ questions, test_time }) {
 
     setAnalysis_bool(true);
     setAnalysisData(submit_test_data);
-    setAnalysisAnswerData(answerdata);
+    setAnalysisAnswerData(attempt_array);
     setOntest(false);
     closeFullscreen();
     console.log(`${submit_test_data} and  ${submit_test_data.total_question} attempt ${submit_test_data.attempt_question}
