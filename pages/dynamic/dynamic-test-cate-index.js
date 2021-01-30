@@ -25,6 +25,14 @@ const data1 = await fetchTestList();
 //  const data=res.json()
 
 // console.log(`data from api req is ${data}`)
+if (!data1) {
+    return {
+      redirect: {
+        destination: '/waiting/waiting-index',
+        permanent: false,
+      },
+    }
+  }
 
 return {
     props: {
