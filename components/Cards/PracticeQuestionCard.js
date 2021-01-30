@@ -70,7 +70,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
       <hr class="border-gray-400 " />
       <main class="mb-auto ">
         <div class="flex flex-row  pt-3 ">
-          <div class={`${infoOn ? 'hidden md:w-3/4 md:block' : 'w-full'} flex flex-col md:flex-row md:w-3/4 overflow-y-auto h-72 md:h-96`}>
+          <div class={`${infoOn ? 'hidden md:w-1/2 md:block' : 'w-full'} flex flex-col md:flex-row md:w-3/4 overflow-y-auto h-72 md:h-96`}>
 
             {
               question.comprehension_show ? (
@@ -180,7 +180,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
               <div className="flex-col flex-wrap text-md  md:text-md text-gray-700 font-light font-serif ">
                 <div className="flex items-start pt-4 flex-row">
                   <button onClick={() => { userAnswer(question.correct_opt, 'a', 'v', question.a) }}
-                    className={`${useranswer.user_ans == 'a' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
+                    className={`${useranswer.user_ans == 'a' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5 p-2 border-2 rounded-full `}> </button>
                   {
                     question.a.split('@@').map(q => {
                       return (
@@ -189,8 +189,8 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
                             q.includes('https://firebasestorage') ? (
                               <Image
                                 src={q}
-                                width={100}
-                                height={50} />
+                                width={150}
+                                height={60} />
                             ) :
                               (
                                 <p className="ml-2">{q}</p>
@@ -205,7 +205,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
 
                 </div>
                 <div className="flex items-start pt-4">
-                  <button onClick={() => { userAnswer(question.correct_opt, 'b', 'v', question.b) }} className={`${useranswer.user_ans == 'b' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
+                  <button onClick={() => { userAnswer(question.correct_opt, 'b', 'v', question.b) }} className={`${useranswer.user_ans == 'b' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5 p-2 border-2 rounded-full `}> </button>
                   {
                     question.b.split('@@').map(q => {
                       return (
@@ -214,8 +214,8 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
                             q.includes('https://firebasestorage') ? (
                               <Image
                                 src={q}
-                                width={100}
-                                height={50} />
+                                width={150}
+                                height={60} />
                             ) :
                               (
                                 <p className="ml-2">{q}</p>
@@ -229,7 +229,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
 
                 </div>
                 <div className="flex items-start pt-4">
-                  <button onClick={() => { userAnswer(question.correct_opt, 'c', 'v', question.c) }} className={`${useranswer.user_ans == 'c' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
+                  <button onClick={() => { userAnswer(question.correct_opt, 'c', 'v', question.c) }} className={`${useranswer.user_ans == 'c' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5 p-2 border-2 rounded-full `}> </button>
                   {
                     question.c.split('@@').map(q => {
                       return (
@@ -238,8 +238,8 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
                             q.includes('https://firebasestorage') ? (
                               <Image
                                 src={q}
-                                width={100}
-                                height={50} />
+                                width={150}
+                                height={60}  />
                             ) :
                               (
                                 <p className="ml-2">{q}</p>
@@ -253,7 +253,7 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
 
                 </div>
                 <div className="flex items-start pt-4">
-                  <button onClick={() => { userAnswer(question.correct_opt, 'd', 'v', question.d) }} className={`${useranswer.user_ans == 'd' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5  border-2 rounded-full `}> </button>
+                  <button onClick={() => { userAnswer(question.correct_opt, 'd', 'v', question.d) }} className={`${useranswer.user_ans == 'd' ? 'bg-green-500 border-white' : 'border-gray-500'} block h-5 w-5 p-2 border-2 rounded-full `}> </button>
                   {
                     question.d.split('@@').map(q => {
                       return (
@@ -262,8 +262,8 @@ export default function PracticeQuestionCard({ question, useranswer, userAnswer,
                             q.includes('https://firebasestorage') ? (
                               <Image
                                 src={q}
-                                width={100}
-                                height={50} />
+                                width={150}
+                                height={60} />
                             ) :
                               (
                                 <p className="ml-2">{q}</p>

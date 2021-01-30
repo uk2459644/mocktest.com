@@ -89,12 +89,12 @@ export default function StaticTestList({ prev_testlist, testlist ,keyword,previe
                         }} className={`${latTest ? 'bg-cyan-600 text-yellow-400 ' : 'bg-cyan-900 text-white'} no-underline py-2 px-2 font-medium mr-2 ml-4 rounded-sm  hover:bg-cyan-900`} >
                             Latest tests
                         </button>
-                        <button onClick={() => {
+                        {/* <button onClick={() => {
                             setLetTest(false)
                             setPrevTest(true)
                         }} className={`${prevTest ? 'bg-gray-900 text-yellow-400 ' : 'bg-gray-600 text-white'} no-underline py-2 px-2 font-medium mx-2 rounded-sm  hover:bg-gray-600 `} >
                             Previous year tests
-                        </button>
+                        </button> */}
                     </nav>
                 </div>
             </section>
