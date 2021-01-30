@@ -21,7 +21,7 @@ export default function Home() {
         <meta property="og:description" content="An exercise system that keeps you safe, makes things simple, and gives you support so you feel capable and confident.
                                              " />
         <meta property="og:image" content="https://mocktest.vercel.app/study-1.jpg" /> 
-        <link rel="icon" href="https://mocktest.vercel.app/" />
+        <link rel="icon" href="https://mocktest.site/" />
       </Head>
 
       <HomeNav />

@@ -3,7 +3,7 @@ export default function BlogCardOverLap(){
     return(
         <div className="flex flex-col pb-16 bg-gray-200">
         <div className="flex flex-col items-center md:mt-4">
-          <image className="sm:rounded-lg w-full h-auto max-w-screen-md" src="https://images.unsplash.com/photo-1476820865390-c52aeebb9891?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" />
+          <img className="sm:rounded-lg w-full h-auto max-w-screen-md" src="https://images.unsplash.com/photo-1476820865390-c52aeebb9891?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" />
         </div>
         <div className="flex flex-col px-2 items-center -mt-16 md:-mt-32">
           <div className="flex flex-col rounded-lg bg-white p-4 sm:p-8 shadow-md w-full max-w-screen-sm mx-2 box-border ">
