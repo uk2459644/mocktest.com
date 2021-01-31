@@ -11,6 +11,7 @@
     "autoprefixer": "^10.1.0",
     "axios": "^0.21.1",
     "chart.js": "^2.9.4",
+    "globby": "^11.0.2",
     "next": "^10.0.0",
     "postcss": "^8.2.1",
     "react": "16.13.1",

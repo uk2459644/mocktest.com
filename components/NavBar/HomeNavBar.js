@@ -53,6 +53,9 @@ export default function HomeNav() {
             <Link href="/jobs/info-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Job Info</a>
             </Link>
+            <Link href="/article/article-index">
+            <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Articles</a>
+            </Link>
             <Link href="/ourteam/team">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
             </Link>
@@ -120,6 +123,9 @@ export default function HomeNav() {
             </Link>
             <Link href="/jobs/info-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Jobs Info</a>
+            </Link>
+            <Link href="/article/article-index">
+            <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Articles</a>
             </Link>
             <Link href="/ourteam/team">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-sm font-medium">Team</a>

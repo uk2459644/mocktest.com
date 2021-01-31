@@ -15,7 +15,7 @@ async function generateSiteMap(pages) {
                
                 return `
                         <url>
-                            <loc>${`https://mocktest.site/jobs/${page.keyword}/${page.id}`}</loc>
+                            <loc>${`https://mocktest.site/article/${page.keyword}/${page.id}`}</loc>
                         </url>
                     `
               })
@@ -23,12 +23,12 @@ async function generateSiteMap(pages) {
         </urlset>
     `
   
-    fs.writeFileSync('public/sitemap-jobs.xml', sitemap);
+    fs.writeFileSync('public/sitemap-articles.xml', sitemap);
 
     return true;
   }
 
-const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/jobs-info/')
+const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/article-info/')
     .then(res => ({
         error: false,
         testlist: res.data,
@@ -60,25 +60,25 @@ export async function getStaticProps() {
 
     }
 }
-export default function JobInfoIndex({ testlist }) {
+export default function ArticleInfoIndex({ testlist }) {
 
 
     return (
         <div>
             <Head>
-                <title>Job Info : Get latest goverment job information.</title>
+                <title>Articles : Get latest articles and goverment job information.</title>
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <meta name="description" content="
-                   Get latest govt job informations of various departments like SSC , RRB etc and we provide practice set for free.
+                   Get latest articles on various topics , important for govt job  of various departments like SSC , RRB etc and we provide practice set for free.
                                              "/>
                 <meta name="robots" content="index, follow" />
-                <meta property="og:title" content="Job Info : Get latest goverment job information " />
+                <meta property="og:title" content="Articles : Get latest articles and goverment job information " />
                 <meta property="og:type" content="website" />
-                <meta property="og:description" content="Get latest govt job informations of various departments like SSC , RRB etc and we provide practice set for free.
+                <meta property="og:description" content="Get latest articles on various topics , important for govt job  of various departments like SSC , RRB etc and we provide practice set for free.
                    " />
                 <meta property="og:image" content="https://mocktest.vercel.app/study-1.jpg" />
-                <link rel="icon" href="https://mocktest.site/jobs/info-index" />
+                <link rel="icon" href="https://mocktest.site/article/article-index" />
 
             </Head>
             <HomeNav />
@@ -92,7 +92,7 @@ export default function JobInfoIndex({ testlist }) {
                                         <BlogCard
                                             key={index}
                                             job={job}
-                                            path="/jobs"
+                                            path="/article"
                                         />
                                     </div>
                                 )
