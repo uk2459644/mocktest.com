@@ -2,9 +2,9 @@ export default function BlogCard({job,path}) {
 
 
     return (
-        <div className="max-w-3xl flex flex-col justify-center md:flex-row px-4 py-10 mx-auto">
-            <div className="w-full overflow-hidden rounded-xl shadow-xl z-10">
-                <img src={job.image} alt="" className="w-full h-56 object-cover" />
+        <div className="max-w-full flex flex-col justify-center md:flex-row px-4 py-10 mx-auto">
+            <div className="w-full  overflow-hidden rounded-xl shadow-xl z-10">
+                <img src={job.image} alt="" className=" w-full object-fit max-h-72" />
             </div>
             <div className="bg-white flex flex-col justify-center px-10 py-8 md:pl-20 my-4 -mt-4 mx-4 md:my-auto md:-ml-10 rounded-xl shadow-xl">
                 <a href="#">

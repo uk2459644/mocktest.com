@@ -90,7 +90,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                 <meta property="og:title" content={points[0].title} />
                 <meta property="og:type" content="website" />
                 <meta property="og:description" content={points[0].description} />
-                <meta property="og:image" content="https://mocktest.vercel.app/study-1.jpg" />
+                <meta property="og:image" content={points[0].image_url} />
                 <link rel="icon" href={`https://mocktest.site/article/${keyword}/${id}`} />
 
             </Head>
@@ -107,7 +107,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                                             point.image_show ? (
                                                 <div class="section py-28 w-full scree border  grid md:grid-cols-2  text-gray-800">
                                                     <div class="subsec flex-none overflow-hidden max-h-96">
-                                                        <img class="w-full" src={point.image_url} alt="" />
+                                                        <img class="w-full object-fit max-h-80" src={point.image_url} alt="" />
                                                     </div>
                                                     <div class="subsec my-auto p-8">
                                                         <div class="title font-semibold text-3xl mb-5">{point.title}</div>
