@@ -2,9 +2,8 @@ import BlogCard from "../../components/Cards/BlogCard";
 import Axios from 'axios';
 import HomeNav from "../../components/NavBar/HomeNavBar";
 import Head from "next/head";
-// import fs from 'fs'
 
-//const fs= require('fs');
+// const fs= require('fs');
 
 // async function generateSiteMap(pages) {
    
@@ -16,7 +15,7 @@ import Head from "next/head";
                
 //                 return `
 //                         <url>
-//                             <loc>${`https://mocktest.site/article/${page.keyword}/${page.id}`}</loc>
+//                             <loc>${`https://mocktest.site/jobs/${page.keyword}/${page.id}`}</loc>
 //                         </url>
 //                     `
 //               })
@@ -24,12 +23,12 @@ import Head from "next/head";
 //         </urlset>
 //     `
   
-//     fs.writeFileSync('public/sitemap-articles.xml', sitemap);
+//     fs.writeFileSync('public/sitemap-jobs.xml', sitemap);
 
 //     return true;
 //   }
 
-const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/article-info/')
+const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/jobs-info/preview/')
     .then(res => ({
         error: false,
         testlist: res.data,
@@ -41,7 +40,7 @@ const fetchTestList = async () => await Axios.get('https://backend-mock-test-cra
 
     ));
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     // const data = await fetchPrevTestList();
     const data1 = await fetchTestList();
@@ -57,29 +56,29 @@ export async function getStaticProps() {
             //   prev_testlist: data,
             testlist: data1,
         },
-        revalidate: 21600,
+      
 
     }
 }
-export default function ArticleInfoIndex({ testlist }) {
+export default function PreviewJobInfoIndex({ testlist }) {
 
 
     return (
         <div>
             <Head>
-                <title>Articles : Get latest articles and goverment job information.</title>
+                <title>Job Info : Get latest goverment job information.</title>
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
                 <meta name="description" content="
-                   Get latest articles on various topics , important for govt job  of various departments like SSC , RRB etc and we provide practice set for free.
+                   Get latest govt job informations of various departments like SSC , RRB etc and we provide practice set for free.
                                              "/>
                 <meta name="robots" content="index, follow" />
-                <meta property="og:title" content="Articles : Get latest articles and goverment job information " />
+                <meta property="og:title" content="Job Info : Get latest goverment job information " />
                 <meta property="og:type" content="website" />
-                <meta property="og:description" content="Get latest articles on various topics , important for govt job  of various departments like SSC , RRB etc and we provide practice set for free.
+                <meta property="og:description" content="Get latest govt job informations of various departments like SSC , RRB etc and we provide practice set for free.
                    " />
                 <meta property="og:image" content="https://mocktest.vercel.app/study-1.jpg" />
-                <link rel="icon" href="https://mocktest.site/article/article-index" />
+                <link rel="icon" href="https://mocktest.site/jobs/info-index" />
 
             </Head>
             <HomeNav />
@@ -93,7 +92,7 @@ export default function ArticleInfoIndex({ testlist }) {
                                         <BlogCard
                                             key={index}
                                             job={job}
-                                            path="/article"
+                                            path="/jobs/preview"
                                         />
                                     </div>
                                 )

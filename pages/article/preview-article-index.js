@@ -2,7 +2,6 @@ import BlogCard from "../../components/Cards/BlogCard";
 import Axios from 'axios';
 import HomeNav from "../../components/NavBar/HomeNavBar";
 import Head from "next/head";
-// import fs from 'fs'
 
 //const fs= require('fs');
 
@@ -29,7 +28,7 @@ import Head from "next/head";
 //     return true;
 //   }
 
-const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/article-info/')
+const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/article-info/preview/')
     .then(res => ({
         error: false,
         testlist: res.data,
@@ -41,12 +40,12 @@ const fetchTestList = async () => await Axios.get('https://backend-mock-test-cra
 
     ));
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     // const data = await fetchPrevTestList();
     const data1 = await fetchTestList();
 
-  // const d1= await generateSiteMap(data1.testlist);
+   // const d1= await generateSiteMap(data1.testlist);
 
     //  const data=res.json()
 
@@ -56,12 +55,11 @@ export async function getStaticProps() {
         props: {
             //   prev_testlist: data,
             testlist: data1,
-        },
-        revalidate: 21600,
+        }
 
     }
 }
-export default function ArticleInfoIndex({ testlist }) {
+export default function PreviewArticleInfoIndex({ testlist }) {
 
 
     return (
@@ -93,7 +91,7 @@ export default function ArticleInfoIndex({ testlist }) {
                                         <BlogCard
                                             key={index}
                                             job={job}
-                                            path="/article"
+                                            path="/article/preview"
                                         />
                                     </div>
                                 )

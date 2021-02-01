@@ -19,6 +19,10 @@
                       </url>
                   
                       <url>
+                          <loc>https://mocktest.site/article/preview-article-index</loc>
+                      </url>
+                  
+                      <url>
                           <loc>https://mocktest.site/category/mockcat</loc>
                       </url>
                   
@@ -52,6 +56,10 @@
                   
                       <url>
                           <loc>https://mocktest.site/jobs/info-index</loc>
+                      </url>
+                  
+                      <url>
+                          <loc>https://mocktest.site/jobs/preview-info-index</loc>
                       </url>
                   
                       <url>

@@ -3,9 +3,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, TelegramIcon, TelegramShareButton, WhatsappIcon, WhatsappShareButton } from 'react-share';
-import BlogCardNews from '../../../components/Cards/BlogCardNews';
-import BlogCardOverLap from '../../../components/Cards/BlogCardOverLap';
-import HomeNav from '../../../components/NavBar/HomeNavBar';
+
+import HomeNav from '../../../../components/NavBar/HomeNavBar';
 
 const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/article-points-list/${params.id}/`)
     .then(res => ({
@@ -19,28 +18,8 @@ const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-t
 
     ));
 
-export async function getStaticPaths() {
-    // Call an external API endpoint to get posts
-    const res = await fetch('https://backend-mock-test-crash.herokuapp.com/article-info/')
-    const tests = await res.json()
 
-    // Get the paths we want to pre-render based on posts
-    const paths = tests.map((post) => ({
-        params: {
-
-            id: post.id.toString(),
-
-            keyword: post.keyword,
-
-        },
-    }))
-
-    // We'll pre-render only these paths at build time.
-    // { fallback: false } means other routes should 404.
-    return { paths, fallback: true }
-}
-
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
     // params contains the post `id`.
     // If the route is like /posts/1, then params.id is 1
     //const res = await fetch(`https://premenv.herokuapp.com/singleshopdetail/${params.id}`)
@@ -59,7 +38,7 @@ export async function getStaticProps({ params }) {
             keyword:params.keyword,
 
         },
-        revalidate: 21600,
+       
 
     }
 }
