@@ -11,15 +11,15 @@
                       </url>
                   
                       <url>
-                          <loc>https://mocktest.site/aboutus/About</loc>
-                      </url>
-                  
-                      <url>
                           <loc>https://mocktest.site/article/article-index</loc>
                       </url>
                   
                       <url>
                           <loc>https://mocktest.site/article/preview-article-index</loc>
+                      </url>
+                  
+                      <url>
+                          <loc>https://mocktest.site/aboutus/About</loc>
                       </url>
                   
                       <url>

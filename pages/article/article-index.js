@@ -4,30 +4,30 @@ import HomeNav from "../../components/NavBar/HomeNavBar";
 import Head from "next/head";
 // import fs from 'fs'
 
-//const fs= require('fs');
+const fs= require('fs');
 
-// async function generateSiteMap(pages) {
+async function generateSiteMap(pages) {
    
   
-//     const sitemap = `
-//         <?xml version="1.0" encoding="UTF-8"?>
-//         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-//             ${pages.map(page => {
+    const sitemap = `
+        <?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            ${pages.map(page => {
                
-//                 return `
-//                         <url>
-//                             <loc>${`https://mocktest.site/article/${page.keyword}/${page.id}`}</loc>
-//                         </url>
-//                     `
-//               })
-//               .join('')}
-//         </urlset>
-//     `
+                return `
+                        <url>
+                            <loc>${`https://mocktest.site/article/${page.keyword}/${page.id}`}</loc>
+                        </url>
+                    `
+              })
+              .join('')}
+        </urlset>
+    `
   
-//     fs.writeFileSync('public/sitemap-articles.xml', sitemap);
+    fs.writeFileSync('public/sitemap-articles.xml', sitemap);
 
-//     return true;
-//   }
+    return true;
+  }
 
 const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/article-info/')
     .then(res => ({
@@ -46,7 +46,7 @@ export async function getStaticProps() {
     // const data = await fetchPrevTestList();
     const data1 = await fetchTestList();
 
-  // const d1= await generateSiteMap(data1.testlist);
+    const d1= await generateSiteMap(data1.testlist);
 
     //  const data=res.json()
 
