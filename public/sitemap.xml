@@ -7,12 +7,7 @@
   </url>
   
   <url>
-      <loc>https://mocktest.site/article/article-index</loc>
-      <priority>0.80</priority>
-  </url>
-  
-  <url>
-      <loc>https://mocktest.site/article/preview-article-index</loc>
+      <loc>https://mocktest.site/aboutus/About</loc>
       <priority>0.80</priority>
   </url>
   
@@ -22,7 +17,12 @@
   </url>
   
   <url>
-      <loc>https://mocktest.site/aboutus/About</loc>
+      <loc>https://mocktest.site/article/article-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/article/preview-article-index</loc>
       <priority>0.80</priority>
   </url>
   
