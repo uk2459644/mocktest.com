@@ -57,7 +57,7 @@ export async function getStaticProps() {
             //   prev_testlist: data,
             testlist: data1,
         },
-        revalidate: 21600,
+        revalidate: 3600,
 
     }
 }
@@ -87,11 +87,11 @@ export default function JobInfoIndex({ testlist }) {
                 testlist.testlist.length > 0 ? (
                     <div>
                         {
-                            testlist.testlist.reverse().map((job, index) => {
+                            testlist.testlist.map((job, index) => {
                                 return (
                                     <div>
                                         <BlogCard
-                                            key={index}
+                                           // key={index}
                                             job={job}
                                             path="/jobs"
                                         />

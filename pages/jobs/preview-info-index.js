@@ -86,11 +86,11 @@ export default function PreviewJobInfoIndex({ testlist }) {
                 testlist.testlist.length > 0 ? (
                     <div>
                         {
-                            testlist.testlist.reverse().map((job, index) => {
+                            testlist.testlist.map((job, index) => {
                                 return (
-                                    <div>
+                                    <div  key={index} >
                                         <BlogCard
-                                            key={index}
+                                          //  key={index}
                                             job={job}
                                             path="/jobs/preview"
                                         />

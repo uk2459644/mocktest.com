@@ -59,7 +59,7 @@ export async function getStaticProps({ params }) {
             keyword:params.keyword,
 
         },
-        revalidate: 21600,
+        revalidate: 3600,
 
     }
 }
