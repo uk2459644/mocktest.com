@@ -9,19 +9,20 @@ const fs= require('fs');
 async function generateSiteMap(pages) {
    
   
-    const sitemap = `
-        <?xml version="1.0" encoding="UTF-8"?>
-        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    const sitemap =
+`<?xml version="1.0" encoding="UTF-8"?>
+<urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             ${pages.map(page => {
                
                 return `
-                        <url>
-                            <loc>${`https://mocktest.site/article/${page.keyword}/${page.id}`}</loc>
-                        </url>
-                    `
+                <url>
+                    <loc>${`https://mocktest.site/article/${page.keyword}/${page.id}`}</loc>
+                    <priority>0.80</priority>
+                </url>
+                `
               })
               .join('')}
-        </urlset>
+</urlset>
     `
   
     fs.writeFileSync('public/sitemap-articles.xml', sitemap);

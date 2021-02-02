@@ -1,102 +1,125 @@
-
-      <?xml version="1.0" encoding="UTF-8"?>
-      <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
           
-                      <url>
-                          <loc>https://mocktest.site</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/aboutus/About</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/analysis/analysis-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/article/article-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/article/preview-article-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/category/mockcat</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/contactus/contactus</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/dynamic/dynamic-test-cate-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/dynamic/preview-dynamic</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/dynamic/test-cat-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/faq/faq-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/faq/privacy-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/faq/terms-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/jobs/info-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/jobs/preview-info-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/ourteam/team</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/ssc-je-ce/ssc-je-ce-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/ssc-je-ce/ssc-je-ce-preview</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/ssc-je-ee/ssc-je-ee-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/ssc-je-ee/ssc-je-ee-preview</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/testpages/testpage</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/waiting/waiting-index</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/dynamic/preview/[preview_keyword]/[keyword]</loc>
-                      </url>
-                  
-                      <url>
-                          <loc>https://mocktest.site/dynamic/static-list/[preview_keyword]/[keyword]</loc>
-                      </url>
-                  
-      </urlset>
+  <url>
+      <loc>https://mocktest.site</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/aboutus/About</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/analysis/analysis-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/article/article-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/article/preview-article-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/category/mockcat</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/contactus/contactus</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/dynamic/dynamic-test-cate-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/dynamic/preview-dynamic</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/dynamic/test-cat-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/faq/faq-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/faq/privacy-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/faq/terms-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/jobs/info-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/jobs/preview-info-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/ourteam/team</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/ssc-je-ce/ssc-je-ce-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/ssc-je-ce/ssc-je-ce-preview</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/ssc-je-ee/ssc-je-ee-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/ssc-je-ee/ssc-je-ee-preview</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/testpages/testpage</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/waiting/waiting-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/dynamic/preview/[preview_keyword]/[keyword]</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/dynamic/static-list/[preview_keyword]/[keyword]</loc>
+      <priority>0.80</priority>
+  </url>
+  
+</urlset>
   
