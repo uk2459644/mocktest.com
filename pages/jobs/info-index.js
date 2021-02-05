@@ -91,7 +91,7 @@ export default function JobInfoIndex({ testlist }) {
                                 return (
                                     <div>
                                         <BlogCard
-                                           // key={index}
+                                            key={index}
                                             job={job}
                                             path="/jobs"
                                         />

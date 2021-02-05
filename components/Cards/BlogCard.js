@@ -15,7 +15,14 @@ export default function BlogCard({job,path}) {
                 <Link href={`${path}/${job.keyword}/${job.id}`}>
                     <h1 className="text-2xl leading-tight pb-2 font-semibold">{job.title}</h1>
                 </Link>
-                <p className="text-lg text-gray-700 leading-tight">{job.short_description}</p>
+                {
+                    job.short_description.split('@@').map((q,index)=>{
+                        return (
+                            <p key={index} className="text-lg text-gray-700 leading-tight">{q}</p>
+                        )
+                    })
+                }
+               
             </div>
         </div>
     )
