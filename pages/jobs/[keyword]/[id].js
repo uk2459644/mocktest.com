@@ -82,16 +82,29 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
     return (
         <div className="">
             <Head>
-            <title>{points[0].title}</title>
+               <title>{points[0].title}</title>
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+                <meta name="keywords" content={keyword} />
                 <meta name="description" content={points[0].description}/>
                 <meta name="robots" content="index, follow" />
                 <meta property="og:title" content={points[0].title} />
                 <meta property="og:type" content="website" />
                 <meta property="og:description" content={points[0].description} />
-                <meta property="og:image" content={points[0].image_url} />
+                <meta property="og:image" alt="image" content={points[0].image_url} />
+
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:description" content={points[0].description}/>
+                <meta name="twitter:title" content={points[0].title} />
+                <meta name="twitter:site" content={`https://mocktest.site/jobs/${keyword}/${id}`} />
+                <meta name="twitter:image" alt="about us image" content={points[0].image_url} />
+               
+               
                 <link rel="icon" href={`https://mocktest.site/jobs/${keyword}/${id}`} />
+                <link rel="canonical" href={`https://mocktest.site/jobs/${keyword}/${id}`} />
+                <link rel="canonical" href={`https://www.mocktest.site/jobs/${keyword}/${id}`} />
+                <link rel="canonical" href={`http://mocktest.site/jobs/${keyword}/${id}`} />
+                <link rel="canonical" href={`http://www.mocktest.site/jobs/${keyword}/${id}`} />
 
             </Head>
             <HomeNav />

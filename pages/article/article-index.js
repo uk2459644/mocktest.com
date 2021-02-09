@@ -71,6 +71,9 @@ export default function ArticleInfoIndex({ testlist }) {
                 <title>Articles : Get latest articles and goverment job information.</title>
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+                <meta name="keywords" content="moct test , free mock test rrb ssc , latest free moc test,An exercise system that keeps you safe, makes things simple, and gives you support so you feel capable and confident.
+        Free Mock Test: Get Online Test Series for Bank PO, Clerk, IBPS, SBI, SSC, LIC, RBI, RRB, JEE, CTET, GATE &amp; other 2020 Exams. Attempt Mock Test, Practice Set, Analyse your preparation and practice question answers in Hindi and English" />
+                
                 <meta name="description" content="
                    Get latest articles on various topics , important for govt job  of various departments like SSC , RRB etc and we provide practice set for free.
                                              "/>
@@ -79,8 +82,22 @@ export default function ArticleInfoIndex({ testlist }) {
                 <meta property="og:type" content="website" />
                 <meta property="og:description" content="Get latest articles on various topics , important for govt job  of various departments like SSC , RRB etc and we provide practice set for free.
                    " />
-                <meta property="og:image" content="https://mocktest.vercel.app/study-1.jpg" />
+                <meta property="og:image" content="https://mocktest.site/study-1.jpg" />
+               
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:description" content="
+                Get latest articles on various topics , important for govt job  of various departments like SSC , RRB etc and we provide practice set for free, Get latest govt job informations of various departments like SSC , RRB etc and we provide practice set for free.
+              Free Mock Test: Get Online Test Series for Bank PO, Clerk, IBPS, SBI, SSC, LIC, RBI, RRB, JEE, CTET, GATE &amp; other 2020 Exams. Attempt Mock Test, Practice Set, Analyse your preparation and practice question answers in Hindi and English" />
+                <meta name="twitter:title" content="Articles : Get latest articles and goverment job information." />
+                <meta name="twitter:site" content="https://mocktest.site/jobs/info-index" />
+                <meta name="twitter:image" content="https://mocktest.site/rishabh-agarwal-unsplash.jpg" />
+               
                 <link rel="icon" href="https://mocktest.site/article/article-index" />
+
+                <link rel="canonical" href="https://www.mocktest.site/article/article-index" />
+                <link rel="canonical" href="https://mocktest.site/article/article-index" />
+                <link rel="canonical" href="http://www.mocktest.site/article/article-index" />
+                <link rel="canonical" href="http://mocktest.site/article/article-index" />
 
             </Head>
             <HomeNav />
