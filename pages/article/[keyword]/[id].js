@@ -102,10 +102,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                 <link rel="icon" href={`https://mocktest.site/article/${keyword}/${id}`} />
 
                 <link rel="canonical" href={`https://mocktest.site/article/${keyword}/${id}`} />
-                <link rel="canonical" href={`https://www.mocktest.site/article/${keyword}/${id}`} />
-                <link rel="canonical" href={`http://mocktest.site/article/${keyword}/${id}`} />
-                <link rel="canonical" href={`http://www.mocktest.site/article/${keyword}/${id}`} />
-
+               
 
             </Head>
             <HomeNav />

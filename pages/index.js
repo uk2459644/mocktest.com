@@ -33,10 +33,9 @@ export default function Home() {
         <meta name="twitter:site" content="https://mocktest.site/" />
         <meta name="twitter:image" content="https://mocktest.site/rishabh-agarwal-unsplash.jpg" />
         <link rel="icon" href="https://mocktest.site/" />
-        <link rel="canonical" href="https://www.mocktest.site/" />
+      
         <link rel="canonical" href="https://mocktest.site/" />
-        <link rel="canonical" href="http://www.mocktest.site/" />
-        <link rel="canonical" href="http://mocktest.site/" />
+       
       </Head>
 
       <HomeNav />

@@ -102,9 +102,8 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                
                 <link rel="icon" href={`https://mocktest.site/jobs/${keyword}/${id}`} />
                 <link rel="canonical" href={`https://mocktest.site/jobs/${keyword}/${id}`} />
-                <link rel="canonical" href={`https://www.mocktest.site/jobs/${keyword}/${id}`} />
-                <link rel="canonical" href={`http://mocktest.site/jobs/${keyword}/${id}`} />
-                <link rel="canonical" href={`http://www.mocktest.site/jobs/${keyword}/${id}`} />
+               
+              
 
             </Head>
             <HomeNav />
@@ -123,7 +122,14 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                                                         <img class="w-full object-fit max-h-80" src={point.image_url} alt="" />
                                                     </div>
                                                     <div class="subsec my-auto p-8">
-                                                        <div class="title font-semibold text-3xl mb-5">{point.title}</div>
+                                                    {
+                                                            index == 0 ? (
+                                                                <h1 class="title font-semibold text-3xl mb-5">{point.title}</h1>
+                                                            ) :  (
+                                                                <h2 class="title font-semibold text-3xl mb-5">{point.title}</h2>
+                                                            )
+                                                        }
+                                                       
                                                         {
                                                             point.description.split('@@').map((p, index) => {
                                                                 return (
@@ -137,7 +143,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                                                                                     </button>
                                                                                 </div>
                                                                             ) : (
-                                                                                    <div key={index} class="desc text-lg">{p}</div>
+                                                                                    <p key={index} class="desc text-lg">{p}</p>
 
                                                                                 )
                                                                         }
@@ -156,7 +162,13 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                                                             {/* <img class="w-full" src={point.image_url} alt="" /> */}
                                                         </div>
                                                         <div class="subsec my-auto p-8">
-                                                            <div class="title font-semibold text-3xl mb-5">{point.title}</div>
+                                                        {
+                                                            index == 0 ? (
+                                                                <h1 class="title font-semibold text-3xl mb-5">{point.title}</h1>
+                                                            ) :  (
+                                                                <h2 class="title font-semibold text-3xl mb-5">{point.title}</h2>
+                                                            )
+                                                        }
                                                             {
                                                                 point.description.split('@@').map((p, index) => {
                                                                     return (
@@ -170,7 +182,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                                                                                         </button>
                                                                                     </div>
                                                                                 ) : (
-                                                                                        <div key={index} class="desc text-lg">{p}</div>
+                                                                                        <p key={index} class="desc text-lg">{p}</p>
 
                                                                                     )
                                                                             }

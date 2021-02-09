@@ -94,11 +94,9 @@ export default function ArticleInfoIndex({ testlist }) {
                
                 <link rel="icon" href="https://mocktest.site/article/article-index" />
 
-                <link rel="canonical" href="https://www.mocktest.site/article/article-index" />
+               
                 <link rel="canonical" href="https://mocktest.site/article/article-index" />
-                <link rel="canonical" href="http://www.mocktest.site/article/article-index" />
-                <link rel="canonical" href="http://mocktest.site/article/article-index" />
-
+               
             </Head>
             <HomeNav />
             {

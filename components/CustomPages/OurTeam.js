@@ -43,10 +43,9 @@ Join our awesome community of “Govt Jobs aspirants”and begin your journey in
                 <meta name="twitter:site" content="https://mocktest.site/ourteam/team" />
                 <meta name="twitter:image" alt="about us image" content="https://mocktest.site/pexels-kulik-stepan-2.jpg" />
                 <link rel="icon" href="https://mocktest.vercel.app/ourteam/team" />
-                <link rel="canonical" href="https://www.mocktest.site/ourteam/team" />
+               
                 <link rel="canonical" href="https://mocktest.site/ourteam/team" />
-                <link rel="canonical" href="http://www.mocktest.site/ourteam/team" />
-                <link rel="canonical" href="http://mocktest.site/ourteam/team" />
+               
             </Head>
 
 
