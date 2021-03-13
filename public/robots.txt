@@ -1,2 +1,12 @@
 User-agent: *
-Disallow: 
+Disallow: /dynamic/
+Disallow: /article/
+Disallow: /ssc-je-ee/
+Disallow: /ssc-je-ee/
+Disallow: /testpages/
+Disallow: /analysis/
+allow: /aboutus/
+allow: /category/
+allow: /faq/
+allow: /contactus/
+allow: /jobs/

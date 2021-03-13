@@ -91,13 +91,13 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                 <meta property="og:title" content={points[0].title} />
                 <meta property="og:type" content="website" />
                 <meta property="og:description" content={points[0].description} />
-                <meta property="og:image" content={points[0].image_url} />
+                <meta property="og:image" alt={points[0].image_url} content={points[0].image_url} />
 
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:description" content={points[0].description}/>
                 <meta name="twitter:title" content={points[0].title} />
                 <meta name="twitter:site" content={`https://mocktest.site/article/${keyword}/${id}`} />
-                <meta name="twitter:image" alt="about us image" content={points[0].image_url} />
+                <meta name="twitter:image" alt={points[0].image_url} content={points[0].image_url} />
                
                 <link rel="icon" href={`https://mocktest.site/article/${keyword}/${id}`} />
 
@@ -118,10 +118,16 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                                             point.image_show ? (
                                                 <div class="section py-28 w-full scree border  grid md:grid-cols-2  text-gray-800">
                                                     <div class="subsec flex-none overflow-hidden max-h-96">
-                                                        <img class="w-full object-fit max-h-80" src={point.image_url} alt="" />
+                                                        <img class="w-full object-fit max-h-80" src={point.image_url} alt={point.image_url} />
                                                     </div>
                                                     <div class="subsec my-auto p-8">
-                                                        <div class="title font-semibold text-3xl mb-5">{point.title}</div>
+                                                    {
+                                                            index == 0 ? (
+                                                                <h1 class="title font-semibold text-3xl mb-5">{point.title}</h1>
+                                                            ) :  (
+                                                                <h2 class="title font-semibold text-3xl mb-5">{point.title}</h2>
+                                                            )
+                                                        }
                                                         {
                                                             point.description.split('@@').map((p, index) => {
                                                                 return (
@@ -135,7 +141,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                                                                                     </button>
                                                                                 </div>
                                                                             ) : (
-                                                                                    <div key={index} class="desc text-lg">{p}</div>
+                                                                                <p key={index} class="desc text-lg">{p}</p>
 
                                                                                 )
                                                                         }
@@ -154,7 +160,13 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                                                             {/* <img class="w-full" src={point.image_url} alt="" /> */}
                                                         </div>
                                                         <div class="subsec my-auto p-8">
-                                                            <div class="title font-semibold text-3xl mb-5">{point.title}</div>
+                                                        {
+                                                            index == 0 ? (
+                                                                <h1 class="title font-semibold text-3xl mb-5">{point.title}</h1>
+                                                            ) :  (
+                                                                <h2 class="title font-semibold text-3xl mb-5">{point.title}</h2>
+                                                            )
+                                                        }
                                                             {
                                                                 point.description.split('@@').map((p, index) => {
                                                                     return (
@@ -168,7 +180,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                                                                                         </button>
                                                                                     </div>
                                                                                 ) : (
-                                                                                        <div key={index} class="desc text-lg">{p}</div>
+                                                                                    <p key={index} class="desc text-lg">{p}</p>
 
                                                                                     )
                                                                             }
