@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router';
 import React from 'react'
 import Axios from 'axios';
-import CoachingCard from '../../../../components/Cards/CoachingCard';
-import InstituteInfoCard from '../../../../components/instituecards/institueinfocard';
-import InstitueFooter from '../../../../components/instituecards/instituefooter';
-import InstituteHero from '../../../../components/instituecards/institutehero';
-import InstituteResult from '../../../../components/instituecards/instituteresult';
-import InstituteAppeal from '../../../../components/instituecards/instituteappeal';
-import InstituteTestList from '../../../../components/instituecards/institutetestlist';
-import InstituteContactUsForm from '../../../../components/instituecards/institutecontactusform';
-import InstituteNav from '../../../../components/instituecards/institutenav';
+// import CoachingCard from '../../../../components/Cards/CoachingCard';
+// import InstituteInfoCard from '../../../../components/instituecards/institueinfocard';
+// import InstitueFooter from '../../../../components/instituecards/instituefooter';
+// import InstituteHero from '../../../../components/instituecards/institutehero';
+// import InstituteResult from '../../../../components/instituecards/instituteresult';
+// import InstituteAppeal from '../../../../components/instituecards/instituteappeal';
+// import InstituteTestList from '../../../../components/instituecards/institutetestlist';
+// import InstituteContactUsForm from '../../../../components/instituecards/institutecontactusform';
+// import InstituteNav from '../../../../components/instituecards/institutenav';
 
 
 
@@ -101,8 +101,8 @@ export default function InstituteIndex({institutes}){
                      })
                  }
              </div>
-             <InstitueFooter />
-          
+             {/* <InstitueFooter />
+           */}
         </div>
     )
 }
