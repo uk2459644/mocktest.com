@@ -1,12 +1,18 @@
 User-agent: *
 Disallow: /dynamic/
-Disallow: /article/
+allow: /article/
 Disallow: /ssc-je-ee/
-Disallow: /ssc-je-ee/
-Disallow: /testpages/
-Disallow: /analysis/
 allow: /aboutus/
+allow: /ourteam/
 allow: /category/
 allow: /faq/
 allow: /contactus/
 allow: /jobs/
+allow: /testpages/
+allow: /testbysubject/
+allow: /institute/
+Sitemap: https://mocktest.site/sitemap-index.xml
+Sitemap: https://mocktest.site/sitemap.xml
+Sitemap: https://mocktest.site/sitemap-articles.xml
+Sitemap: https://mocktest.site/sitemap-jobs.xml
+

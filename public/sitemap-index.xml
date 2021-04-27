@@ -1,82 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<?xml version='1.0' encoding='UTF-8'?>
 
+<sitemapindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
-<url>
-  <loc>https://mocktest.site/</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/dynamic/dynamic-test-cate-index</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/jobs/info-index</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/article/article-index</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/ourteam/team</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/aboutus/About</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/contactus/contactus</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/dynamic/static-list/previous-year-rrb-ntpc/rrb-ntpc</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/dynamic/static-list/previous-year-rrb-group-d/rrb-group-d</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/dynamic/static-list/previous-year-ssc-cgl-testlist/ssc-cgl-testlist</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/faq/privacy-index</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/faq/terms-index</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/faq/faq-index</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mocktest.site/jobs/ssc-cgl-mock-test-1-january-2021/1</loc>
-  <lastmod>2021-02-02T01:26:54+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
+         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd"
 
+         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-</urlset>
+   <sitemap>
+     <loc>https://mocktest.site/sitemap.xml</loc>
+   </sitemap>
+   
+   <sitemap>
+     <loc>https://mocktest.site/sitemap-jobs.xml</loc>
+   </sitemap>
+   
+   <sitemap>
+     <loc>https://mocktest.site/sitemap-articles.xml</loc>
+   </sitemap>
+   
+   <sitemap>
+     <loc>https://mocktest.site/sitemap.xml</loc>
+   </sitemap>
+
+</sitemapindex>

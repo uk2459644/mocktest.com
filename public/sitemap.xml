@@ -67,6 +67,11 @@
   </url>
   
   <url>
+      <loc>https://mocktest.site/institute/cities</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
       <loc>https://mocktest.site/jobs/info-index</loc>
       <priority>0.80</priority>
   </url>
@@ -102,12 +107,22 @@
   </url>
   
   <url>
+      <loc>https://mocktest.site/testbysubject/subject-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
       <loc>https://mocktest.site/testpages/testpage</loc>
       <priority>0.80</priority>
   </url>
   
   <url>
       <loc>https://mocktest.site/waiting/waiting-index</loc>
+      <priority>0.80</priority>
+  </url>
+  
+  <url>
+      <loc>https://mocktest.site/institute/coachings/coaching-index</loc>
       <priority>0.80</priority>
   </url>
   

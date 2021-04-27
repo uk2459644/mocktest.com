@@ -50,6 +50,9 @@ export default function HomeNav() {
             <Link href="/dynamic/dynamic-test-cate-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mock-Tests</a>
             </Link>
+            <Link href="/testbysubject/subject-index">
+            <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Subject-Tests</a>
+            </Link>
             <Link href="/jobs/info-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Job Info</a>
             </Link>
@@ -120,6 +123,9 @@ export default function HomeNav() {
             </Link>
             <Link href="/dynamic/dynamic-test-cate-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mock-Tests</a>
+            </Link>
+            <Link href="/testbysubject/subject-index">
+            <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Subject-Tests</a>
             </Link>
             <Link href="/jobs/info-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Jobs Info</a>
