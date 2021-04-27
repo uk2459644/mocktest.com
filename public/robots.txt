@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /dynamic/
 allow: /article/
 Disallow: /ssc-je-ee/
 allow: /aboutus/
