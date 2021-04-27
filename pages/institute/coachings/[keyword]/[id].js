@@ -79,8 +79,8 @@ export default function InstituteIndex({institutes}){
                  {
                      institutes.institutes.sort().map((item,index)=>{
                          return (
-                             <div>
-                                 <CoachingCard key={index} item={item} />
+                             <div key={index}>
+                                 <CoachingCard  item={item} />
                                  </div>
                          )
                      })
