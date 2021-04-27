@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import React from 'react'
 import Axios from 'axios';
-import CoachingCard from '../../../../components/Cards/CoachingCard';
+import CoachingCard from '../../../../components/Cards/coachingcard';
 // import CoachingCard from '../../../../components/Cards/CoachingCard';
 
 
