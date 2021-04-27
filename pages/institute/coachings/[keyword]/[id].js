@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import React from 'react'
 import Axios from 'axios';
 import CoachingCard from '../../../../components/Cards/CoachingCard';
+// import CoachingCard from '../../../../components/Cards/CoachingCard';
 
 
 const fetchInstitute = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/institute-list/${params.id}/`)
