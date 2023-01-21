@@ -5,6 +5,7 @@ import Axios from 'axios'
 import SubjectCard from '../../components/testbysubjectcards/subjectcard';
 import SubjectTestListCardPrev from '../../components/testbysubjectcards/subjecttestcard';
 import { BACKEND_URL } from '../../constants';
+import HomeNav from '../../components/NavBar/HomeNavBar';
 
 
 
@@ -47,7 +48,7 @@ export default function InstituteIndex({cities}){
         return <h1>Loading...</h1>
     }
 
-    if (!cities) {
+    if (cities.length==0) {
 
         return <h1>No data</h1>;
     }
@@ -57,6 +58,8 @@ export default function InstituteIndex({cities}){
 
     return (
         <div>
+            <HomeNav />
+            
             <div class="md:grid grid-cols-3 grid-cols-1 gap-4 m-16">
             {
                 cities.sort().map((item,index)=>{

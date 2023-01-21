@@ -3,6 +3,7 @@ import React from 'react'
 import Axios from 'axios';
 import Link from 'next/link'
 import { BACKEND_URL } from '../../../constants';
+import HomeNav from '../../../components/NavBar/HomeNavBar';
 
 
 const fetchInstitute = async (params) => await Axios.get(`${BACKEND_URL}/test-by-subject-list/${params.id}/`)
@@ -73,6 +74,7 @@ export default function InstituteIndex({ institutes,keyword }) {
 
     return (
         <div>
+            <HomeNav />
             <div class=" md:grid grid-cols-3 grid-cols-1 gap-4 m-16">
                 {
                     institutes.institutes.sort().map((item, index) => {
