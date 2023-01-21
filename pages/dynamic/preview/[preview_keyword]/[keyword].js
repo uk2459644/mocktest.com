@@ -3,10 +3,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Axios from 'axios'
+import { BACKEND_URL } from "../../../../constants";
 
 
 
-const fetchPrevTestList = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/${params.preview_keyword}/preview/`)
+const fetchPrevTestList = async (params) => await Axios.get(`${BACKEND_URL}/${params.preview_keyword}/preview/`)
     .then(res => ({
         error: false,
         prev_testlist: res.data,
@@ -18,7 +19,7 @@ const fetchPrevTestList = async (params) => await Axios.get(`https://backend-moc
 
     ));
 
-const fetchTestList = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/${params.keyword}/preview/`)
+const fetchTestList = async (params) => await Axios.get(`${BACKEND_URL}/${params.keyword}/preview/`)
     .then(res => ({
         error: false,
         testlist: res.data,

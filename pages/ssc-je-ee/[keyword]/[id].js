@@ -8,9 +8,10 @@ import AnalysisCard from '../../../components/Cards/AnalysisCard';
 import VerticalBarChart from '../../../components/Charts/vertical-bar-chart';
 import PieChart from '../../../components/Charts/pie-chart';
 import AnalysisFooter from '../../../components/Cards/AnalysisFooter';
+import { BACKEND_URL } from '../../../constants';
 
 
-const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/ssc-je-ee/${params.id}/`)
+const fetchQuestions = async (params) => await Axios.get(`${BACKEND_URL}/ssc-je-ee/${params.id}/`)
     .then(res => ({
         error: false,
         questions: res.data,
@@ -24,7 +25,7 @@ const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-t
 
 export async function getStaticPaths() {
     // Call an external API endpoint to get posts
-    const res = await fetch('https://backend-mock-test-crash.herokuapp.com/ssc-je-ee/')
+    const res = await fetch(`'${BACKEND_URL}/ssc-je-ee/'`)
     const tests = await res.json()
   
     // Get the paths we want to pre-render based on posts

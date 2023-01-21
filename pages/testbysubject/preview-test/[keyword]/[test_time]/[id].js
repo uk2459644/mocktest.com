@@ -10,10 +10,11 @@ import PieChart from '../../../../../components/Charts/pie-chart';
 import AnalysisFooter from '../../../../../components/Cards/AnalysisFooter';
 import AnalysisQuestionCard from '../../../../../components/Cards/AnalysisQuestionCard';
 import Countdown from "react-countdown";
+import { BACKEND_URL } from '../../../../../constants';
 
 
 
-const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/questions-bysubject-test-list/${params.id}/`)
+const fetchQuestions = async (params) => await Axios.get(`${BACKEND_URL}/questions-bysubject-test-list/${params.id}/`)
   .then(res => ({
     error: false,
     questions: res.data,
@@ -27,7 +28,7 @@ const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-t
 
 // export async function getStaticPaths() {
 //     // Call an external API endpoint to get posts
-//     const res = await fetch('https://backend-mock-test-crash.herokuapp.com/rrb-group-d/')
+//     const res = await fetch('${BACKEND_URL}/rrb-group-d/')
 //     const tests = await res.json()
 
 //     // Get the paths we want to pre-render based on posts
@@ -162,7 +163,10 @@ export default function QuestionPageRRBGROUPD({ questions, test_time }) {
     setAnalysisData(submit_test_data);
     setAnalysisAnswerData(attempt_array);
     setOntest(false);
-    closeFullscreen();
+    if (!window.screenTop && !window.screenY){
+      closeFullscreen();
+    }
+    
     console.log(`${submit_test_data} and  ${submit_test_data.total_question} attempt ${submit_test_data.attempt_question}
      correct ${submit_test_data.correct_question} wrong_ ${submit_test_data.wrong_question} marks ${submit_test_data.final_marks} correct_marks ${submit_test_data.correct_marks}
       wrong_marks ${submit_test_data.wrong_marks}`)
@@ -433,7 +437,7 @@ export default function QuestionPageRRBGROUPD({ questions, test_time }) {
           />
         </div>
         <AnalysisFooter
-          link="/dynamic/dynamic-test-cate-index"
+          link="/testbysubject/subject-index"
         />
         <div>
           <div className="flex flex-row flex-wrap justify-center content-center align-center items-center">

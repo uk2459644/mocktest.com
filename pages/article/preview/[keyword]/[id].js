@@ -5,8 +5,9 @@ import { useState, useEffect } from 'react';
 import { FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, TelegramIcon, TelegramShareButton, WhatsappIcon, WhatsappShareButton } from 'react-share';
 
 import HomeNav from '../../../../components/NavBar/HomeNavBar';
+import { BACKEND_URL, FRONTEND_URL } from '../../../../constants';
 
-const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/article-points-list/${params.id}/`)
+const fetchQuestions = async (params) => await Axios.get(`${BACKEND_URL}/article-points-list/${params.id}/`)
     .then(res => ({
         error: false,
         questions: res.data,
@@ -70,7 +71,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                 <meta property="og:type" content="website" />
                 <meta property="og:description" content={points[0].description} />
                 <meta property="og:image" content={points[0].image_url} />
-                <link rel="icon" href={`https://mocktest.site/article/${keyword}/${id}`} />
+                <link rel="icon" href={`${FRONTEND_URL}article/${keyword}/${id}`} />
 
             </Head>
             <HomeNav />
@@ -163,7 +164,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
             }
             <div className="flex flex-row  justify-center align-center content-center m-4">
                 <FacebookShareButton 
-                url={`https://mocktest.site/article/${keyword}/${id}`}
+                url={`${FRONTEND_URL}article/${keyword}/${id}`}
                 title={points[0].title}
                 quote={points[0].description}
                 className=" mr-4"
@@ -176,10 +177,10 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
 
                 </FacebookShareButton>
                 <FacebookMessengerShareButton
-                  url={`https://mocktest.site/article/${keyword}/${id}`}
+                  url={`${FRONTEND_URL}article/${keyword}/${id}`}
                   title={points[0].title}
                   className=" mr-4"
-                  redirectUri={`https://mocktest.site/article/${keyword}/${id}`}
+                  redirectUri={`${FRONTEND_URL}article/${keyword}/${id}`}
                  
                 >
                     <FacebookMessengerIcon
@@ -189,7 +190,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
 
                 </FacebookMessengerShareButton>
                 <TelegramShareButton
-                 url={`https://mocktest.site/article/${keyword}/${id}`}
+                 url={`${FRONTEND_URL}article/${keyword}/${id}`}
                  title={points[0].title}
                  className=" mr-4"
                 
@@ -201,7 +202,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
 
                 </TelegramShareButton>
                 <WhatsappShareButton
-                 url={`https://mocktest.site/article/${keyword}/${id}`}
+                 url={`${FRONTEND_URL}article/${keyword}/${id}`}
                  title={points[0].title}
                  className=" mr-4"
                 >

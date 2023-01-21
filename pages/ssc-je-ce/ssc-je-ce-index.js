@@ -2,8 +2,9 @@ import Axios from 'axios'
 import { useState } from 'react';
 import HomeNav from '../../components/NavBar/HomeNavBar';
 import Link from 'next/link'
+import { BACKEND_URL } from '../../constants';
 
-const fetchPrevTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/previous-year-ssc-je-ce/')
+const fetchPrevTestList = async () => await Axios.get(`'${BACKEND_URL}/previous-year-ssc-je-ce/'`)
     .then(res => ({
         error: false,
         prev_testlist: res.data,
@@ -15,7 +16,7 @@ const fetchPrevTestList = async () => await Axios.get('https://backend-mock-test
 
     ));
 
-const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/ssc-je-ce/')
+const fetchTestList = async () => await Axios.get(`'${BACKEND_URL}/ssc-je-ce/'`)
     .then(res => ({
         error: false,
         testlist: res.data,

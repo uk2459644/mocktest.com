@@ -2,6 +2,7 @@ import BlogCard from "../../components/Cards/BlogCard";
 import Axios from 'axios';
 import HomeNav from "../../components/NavBar/HomeNavBar";
 import Head from "next/head";
+import { BACKEND_URL } from "../../constants";
 
 //const fs= require('fs');
 
@@ -28,7 +29,7 @@ import Head from "next/head";
 //     return true;
 //   }
 
-const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/article-info/preview/')
+const fetchTestList = async () => await Axios.get(`'${BACKEND_URL}/article-info/preview/'`)
     .then(res => ({
         error: false,
         testlist: res.data,

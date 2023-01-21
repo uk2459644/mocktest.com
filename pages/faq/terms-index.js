@@ -1,9 +1,10 @@
 import Axios from 'axios'
 import { useState } from 'react';
 import HomeNav from '../../components/NavBar/HomeNavBar';
+import { BACKEND_URL } from '../../constants';
 
 
-const fetchPolicies = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/terms-list/')
+const fetchPolicies = async () => await Axios.get(`${BACKEND_URL}/terms-list/`)
     .then(res => ({
         error: false,
         policylist: res.data,

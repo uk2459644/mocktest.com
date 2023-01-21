@@ -4,10 +4,11 @@ import Axios from 'axios'
 
 import SubjectCard from '../../components/testbysubjectcards/subjectcard';
 import SubjectTestListCardPrev from '../../components/testbysubjectcards/subjecttestcard';
+import { BACKEND_URL } from '../../constants';
 
 
 
-const fetchInstitute = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/test-by-subject-list/${params.id}/`)
+const fetchInstitute = async (params) => await Axios.get(`${BACKEND_URL}/test-by-subject-list/${params.id}/`)
     .then(res => ({
         error: false,
         institutes: res.data,
@@ -22,7 +23,7 @@ const fetchInstitute = async (params) => await Axios.get(`https://backend-mock-t
 export async function getStaticProps() {
     // params contains the post `id`.
     // If the route is like /posts/1, then params.id is 1
-    const res = await fetch('https://backend-mock-test-crash.herokuapp.com/subject-list/')
+    const res = await fetch(`${BACKEND_URL}/subject-list/`)
     const cities = await res.json()
 
     //const post = await res.json()

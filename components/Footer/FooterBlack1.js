@@ -47,9 +47,9 @@ export default function FooterBlack1() {
                             <div className={`tab-content overflow-hidden leading-normal`}>
                                 <ul className={`${isOn1 ? 'block' : 'hidden'} w-full flex flex-col text-gray-700 list-none p-0 font-thin text-left`}>
                                     {/* <li><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">Features</a></li> */}
-                                    <li><Link href="/dynamic/static-list/previous-year-rrb-ntpc/rrb-ntpc"><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">RRB NTPC</a></Link></li>
+                                    {/* <li><Link href="/dynamic/static-list/previous-year-rrb-ntpc/rrb-ntpc"><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">RRB NTPC</a></Link></li>
                                     <li><Link href="/dynamic/static-list/previous-year-rrb-group-d/rrb-group-d"><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">RRB GROUP D</a></Link></li>
-                                    <li><Link href="/dynamic/static-list/previous-year-ssc-cgl-testlist/ssc-cgl-testlist"><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">SSC CGL</a></Link></li>
+                                    <li><Link href="/dynamic/static-list/previous-year-ssc-cgl-testlist/ssc-cgl-testlist"><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">SSC CGL</a></Link></li> */}
                                     {/* <li><Link href="/ssc-chsl/ssc-chsl-index"><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">SSC CHSL</a></Link></li>
                      */}
                                     {/* <li><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">FAQ</a></li> */}
@@ -156,9 +156,9 @@ export default function FooterBlack1() {
                         <ul className="text-gray-700 list-none p-0 font-thin flex flex-col text-left w-full">
                             <li className="inline-block py-2 px-3 text-white uppercase font-medium tracking-wide">Mock-Tests</li>
                             
-                            <li><Link href="/dynamic/static-list/previous-year-rrb-ntpc/rrb-ntpc"><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">RRB NTPC</a></Link></li>
+                            {/* <li><Link href="/dynamic/static-list/previous-year-rrb-ntpc/rrb-ntpc"><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">RRB NTPC</a></Link></li>
                             <li><Link href="/dynamic/static-list/previous-year-rrb-group-d/rrb-group-d"><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">RRB GROUP D</a></Link></li>
-                            <li><Link href="/dynamic/static-list/previous-year-ssc-cgl-testlist/ssc-cgl-testlist"><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">SSC CGL</a></Link></li>
+                            <li><Link href="/dynamic/static-list/previous-year-ssc-cgl-testlist/ssc-cgl-testlist"><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">SSC CGL</a></Link></li> */}
                             {/* <li><Link href="/ssc-chsl/ssc-chsl-index"><a  className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline">SSC CHSL</a></Link></li>
                 */}
                         </ul>

@@ -83,7 +83,7 @@ Join our awesome community of “Govt Jobs aspirants”and begin your journey in
              /> */}
             <div className="pt-6 text-center">
               <h5 className="text-xl font-bold">Upendra Kumar</h5>
-              <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">B. Tech. (expected-2022) / ceo , founder</p>
+              <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">B. Tech. (2022) </p>
               <div className="mt-6">
                 <button className="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
                   <i className="fab fa-twitter"></i></button
@@ -98,7 +98,7 @@ Join our awesome community of “Govt Jobs aspirants”and begin your journey in
         <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-16" data-aos="flip-right">
           <div className="px-6">
           <Image 
-            src="/amit_mock_img2.jpeg" 
+            src="/aziz-acharki-unsplash.jpg" 
             alt="team photo 1"
             className="shadow-lg rounded max-w-full mx-auto"
             width={250}
@@ -113,8 +113,8 @@ Join our awesome community of “Govt Jobs aspirants”and begin your journey in
         // style="max-width: 250px" 
              /> */}
             <div className="pt-6 text-center">
-              <h5 className="text-xl font-bold">Amit Kumar</h5>
-              <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">B. Tech. / M.D.</p>
+              <h5 className="text-xl font-bold">Some Random Kumar</h5>
+              <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">Only for card rendering</p>
               <div className="mt-6">
                 <button className="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
                   <i className="fab fa-twitter"></i></button
@@ -128,7 +128,7 @@ Join our awesome community of “Govt Jobs aspirants”and begin your journey in
         <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-16" data-aos="flip-right">
           <div className="px-6">
           <Image 
-            src="/shashi_img_mock1.jpg" 
+            src="/upendra.png" 
             alt="team photo 1"
             className="shadow-lg rounded max-w-full mx-auto"
             width={250}
@@ -143,8 +143,8 @@ Join our awesome community of “Govt Jobs aspirants”and begin your journey in
         // style="max-width: 250px" 
              /> */}
             <div className="pt-6 text-center">
-              <h5 className="text-xl font-bold">Shashi Kumar</h5>
-              <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">B. Tech. / B.D.E.</p>
+              <h5 className="text-xl font-bold">Again me</h5>
+              <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">With some random..</p>
               <div className="mt-6">
                 <button className="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
                   <i className="fab fa-twitter"></i></button
@@ -156,66 +156,8 @@ Join our awesome community of “Govt Jobs aspirants”and begin your journey in
           </div>
         </div>
         {/* <!-- Card 3 --> */}
-        <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-16 md:px-16" data-aos="flip-right">
-          <div className="px-6">
-          <Image 
-            src="/prem_mock_image1.jpeg" 
-            alt="team photo 1"
-            className="shadow-lg rounded max-w-full mx-auto "
-            width={250}
-            height={350}
-            />
-            {/* <img alt="..." src="https://images.pexels.com/photos/3490348/pexels-photo-3490348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-            className="shadow-lg rounded max-w-full mx-auto"
-            style={{
-                maxWidth:`250px`,
-            }}
-        // style="max-width: 250px"
-             /> */}
-            <div className="pt-6 text-center">
-              <h5 className="text-xl font-bold">Prem Kumar</h5>
-              <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">Graduation (Account Honourss.) / H.R. & Sales</p>
-              <div className="mt-6">
-                <button className="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                  <i className="fab fa-twitter"></i></button
-                >
-                <button className="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                <i className="fab fa-twitter"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="w-full md:w-4/12 lg:mb-0 mb-12 px-16 md:px-16" data-aos="flip-right">
-          <div className="px-6">
-          <Image 
-            src="/vikash_mock1.jpeg" 
-            alt="team photo 1"
-            className="shadow-lg rounded max-w-full mx-auto "
-            width={250}
-            height={350}
-            />
-            {/* <img alt="..." src="https://images.pexels.com/photos/3490348/pexels-photo-3490348.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-            className="shadow-lg rounded max-w-full mx-auto"
-            style={{
-                maxWidth:`250px`,
-            }}
-        // style="max-width: 250px"
-             /> */}
-            <div className="pt-6 text-center">
-              <h5 className="text-xl font-bold">Vikash Kumar</h5>
-              <p className="mt-1 text-sm text-gray-500 uppercase font-semibold">Graduation  / H.R. & Sales</p>
-              <div className="mt-6">
-                <button className="bg-blue-400 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                  <i className="fab fa-twitter"></i></button
-                >
-                <button className="bg-gray-800 text-white w-8 h-8 rounded-full outline-none focus:outline-none mr-1 mb-1" type="button">
-                <i className="fab fa-twitter"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+       
+       
       </div>
     </div>
 

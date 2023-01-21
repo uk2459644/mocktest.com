@@ -6,8 +6,9 @@ import { FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, Face
 import BlogCardNews from '../../../components/Cards/BlogCardNews';
 import BlogCardOverLap from '../../../components/Cards/BlogCardOverLap';
 import HomeNav from '../../../components/NavBar/HomeNavBar';
+import { BACKEND_URL, FRONTEND_URL } from '../../../constants';
 
-const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/jobs-points-list/${params.id}/`)
+const fetchQuestions = async (params) => await Axios.get(`${BACKEND_URL}/jobs-points-list/${params.id}/`)
     .then(res => ({
         error: false,
         questions: res.data,
@@ -21,7 +22,7 @@ const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-t
 
 export async function getStaticPaths() {
     // Call an external API endpoint to get posts
-    const res = await fetch('https://backend-mock-test-crash.herokuapp.com/jobs-info/')
+    const res = await fetch(`'${BACKEND_URL}/jobs-info/'`)
     const tests = await res.json()
 
     // Get the paths we want to pre-render based on posts
@@ -96,12 +97,12 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:description" content={points[0].description}/>
                 <meta name="twitter:title" content={points[0].title} />
-                <meta name="twitter:site" content={`https://mocktest.site/jobs/${keyword}/${id}`} />
+                <meta name="twitter:site" content={`${FRONTEND_URL}jobs/${keyword}/${id}`} />
                 <meta name="twitter:image" alt={points[0].image_url} content={points[0].image_url} />
                
                
-                <link rel="icon" href={`https://mocktest.site/jobs/${keyword}/${id}`} />
-                <link rel="canonical" href={`https://mocktest.site/jobs/${keyword}/${id}`} />
+                <link rel="icon" href={`${FRONTEND_URL}jobs/${keyword}/${id}`} />
+                <link rel="canonical" href={`${FRONTEND_URL}jobs/${keyword}/${id}`} />
                
               
 
@@ -209,7 +210,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
             }
             <div className="flex flex-row  justify-center align-center content-center m-4">
                 <FacebookShareButton 
-                url={`https://mocktest.site/jobs/${keyword}/${id}`}
+                url={`${FRONTEND_URL}jobs/${keyword}/${id}`}
                 title={points[0].title}
                 quote={points[0].description}
                 className=" mr-4"
@@ -222,10 +223,10 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
 
                 </FacebookShareButton>
                 <FacebookMessengerShareButton
-                  url={`https://mocktest.site/jobs/${keyword}/${id}`}
+                  url={`${FRONTEND_URL}jobs/${keyword}/${id}`}
                   title={points[0].title}
                   className=" mr-4"
-                  redirectUri={`https://mocktest.site/jobs/${keyword}/${id}`}
+                  redirectUri={`${FRONTEND_URL}jobs/${keyword}/${id}`}
                  
                 >
                     <FacebookMessengerIcon
@@ -235,7 +236,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
 
                 </FacebookMessengerShareButton>
                 <TelegramShareButton
-                 url={`https://mocktest.site/jobs/${keyword}/${id}`}
+                 url={`${FRONTEND_URL}jobs/${keyword}/${id}`}
                  title={points[0].title}
                  className=" mr-4"
                 
@@ -247,7 +248,7 @@ export default function JobsInfoPoints({ questions , id,keyword }) {
 
                 </TelegramShareButton>
                 <WhatsappShareButton
-                 url={`https://mocktest.site/jobs/${keyword}/${id}`}
+                 url={`${FRONTEND_URL}jobs/${keyword}/${id}`}
                  title={points[0].title}
                  className=" mr-4"
                 >

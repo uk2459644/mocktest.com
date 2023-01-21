@@ -10,10 +10,11 @@ import PieChart from '../../../../../components/Charts/pie-chart';
 import AnalysisFooter from '../../../../../components/Cards/AnalysisFooter';
 import AnalysisQuestionCard from '../../../../../components/Cards/AnalysisQuestionCard';
 import Countdown from "react-countdown";
+import { BACKEND_URL } from '../../../../../constants';
 
 
 
-const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/${params.keyword}/${params.id}/`)
+const fetchQuestions = async (params) => await Axios.get(`${BACKEND_URL}/${params.keyword}/${params.id}/`)
   .then(res => ({
     error: false,
     questions: res.data,
@@ -27,7 +28,7 @@ const fetchQuestions = async (params) => await Axios.get(`https://backend-mock-t
 
 // export async function getStaticPaths() {
 //     // Call an external API endpoint to get posts
-//     const res = await fetch('https://backend-mock-test-crash.herokuapp.com/rrb-group-d/')
+//     const res = await fetch('${BACKEND_URL}/rrb-group-d/')
 //     const tests = await res.json()
 
 //     // Get the paths we want to pre-render based on posts

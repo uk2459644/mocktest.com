@@ -4,6 +4,7 @@ import LandingPage1 from '../components/CustomPages/LandingPage1'
 import OurTeam from '../components/CustomPages/OurTeam'
 import FooterBlack1 from '../components/Footer/FooterBlack1'
 import HomeNav from '../components/NavBar/HomeNavBar'
+import { FRONTEND_URL } from '../constants'
 
 export default function Home() {
   return (
@@ -30,11 +31,11 @@ export default function Home() {
         <meta name="twitter:description" content="An exercise system that keeps you safe, makes things simple, and gives you support so you feel capable and confident.
         Free Mock Test: Get Online Test Series for Bank PO, Clerk, IBPS, SBI, SSC, LIC, RBI, RRB, JEE, CTET, GATE &amp; other 2020 Exams. Attempt Mock Test, Practice Set, Analyse your preparation and practice question answers in Hindi and English" />
         <meta name="twitter:title" content="Mock-Test : GET PREPARED, CONFIDENT & MOTIVATED" />
-        <meta name="twitter:site" content="https://mocktest.site/" />
+        <meta name="twitter:site" content={FRONTEND_URL} />
         <meta name="twitter:image" content="https://mocktest.site/rishabh-agarwal-unsplash.jpg" />
-        <link rel="icon" href="https://mocktest.site/" />
+        <link rel="icon" href={FRONTEND_URL} />
       
-        <link rel="canonical" href="https://mocktest.site/" />
+        <link rel="canonical" href={FRONTEND_URL} />
        
       </Head>
 

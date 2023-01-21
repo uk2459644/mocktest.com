@@ -4,8 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link'
 import HomeNav from '../../components/NavBar/HomeNavBar';
 import OverLapTestCatCard from '../../components/Cards/OverLapingTestCatCard';
+import { BACKEND_URL } from '../../constants';
 
-const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/cat/')
+const fetchTestList = async () => await Axios.get(`${BACKEND_URL}/cat/`)
 .then(res => ({
     error: false,
     catlist: res.data,

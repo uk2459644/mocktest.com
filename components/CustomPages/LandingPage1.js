@@ -26,7 +26,7 @@ export default function LandingPage1() {
                         <div>
                             <h1 className="text-white font-semibold text-4xl">GET PREPARED, CONFIDENT & <span className="text-yellow-500">MOTIVATED</span></h1>
                             <p className="mt-4 text-lg text-gray-300">An exercise system that keeps you safe, makes things simple, and gives you support so you feel capable and confident.</p>
-                           <Link href="/dynamic/dynamic-test-cate-index">
+                           <Link href="/testbysubject/subject-index">
                            <a  className="bg-transparent hover:bg-yellow-500 text-yellow-600 font-semibold hover:text-white p-3 border border-yellow-600 hover:border-trasparent rounded inline-block mt-5 cursor-pointer"> Let's Start </a>
                            </Link> 
                         </div>

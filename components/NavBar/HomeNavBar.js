@@ -47,15 +47,15 @@ export default function HomeNav() {
             <Link href="/">
             <a  className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
             </Link>
-            <Link href="/dynamic/dynamic-test-cate-index">
+            {/* <Link href="/dynamic/dynamic-test-cate-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mock-Tests</a>
-            </Link>
+            </Link> */}
             <Link href="/testbysubject/subject-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Subject-Tests</a>
             </Link>
-            <Link href="/jobs/info-index">
+            {/* <Link href="/jobs/info-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Job Info</a>
-            </Link>
+            </Link> */}
             {/* <Link href="/article/article-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Articles</a>
             </Link> */}
@@ -121,15 +121,15 @@ export default function HomeNav() {
       <Link href="/">
             <a  className="text-gray-300 hover:bg-gray-700 block px-3 py-2 rounded-md text-sm font-medium">Home</a>
             </Link>
-            <Link href="/dynamic/dynamic-test-cate-index">
+            {/* <Link href="/dynamic/dynamic-test-cate-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mock-Tests</a>
-            </Link>
+            </Link> */}
             <Link href="/testbysubject/subject-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Subject-Tests</a>
             </Link>
-            <Link href="/jobs/info-index">
+            {/* <Link href="/jobs/info-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Jobs Info</a>
-            </Link>
+            </Link> */}
             {/* <Link href="/article/article-index">
             <a  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Articles</a>
             </Link> */}

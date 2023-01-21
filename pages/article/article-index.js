@@ -2,6 +2,7 @@ import BlogCard from "../../components/Cards/BlogCard";
 import Axios from 'axios';
 import HomeNav from "../../components/NavBar/HomeNavBar";
 import Head from "next/head";
+import { BACKEND_URL } from "../../constants";
 // import fs from 'fs'
 
 const fs= require('fs');
@@ -30,7 +31,7 @@ async function generateSiteMap(pages) {
     return true;
   }
 
-const fetchTestList = async () => await Axios.get('https://backend-mock-test-crash.herokuapp.com/article-info/')
+const fetchTestList = async () => await Axios.get(`'${BACKEND_URL}/article-info/'`)
     .then(res => ({
         error: false,
         testlist: res.data,

@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
 import React from 'react'
 import CityCard from '../../components/Cards/citycard';
+import { BACKEND_URL } from '../../constants';
 
 
-const fetchInstitute = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/institute-list/${params.id}/`)
+const fetchInstitute = async (params) => await Axios.get(`${BACKEND_URL}/institute-list/${params.id}/`)
     .then(res => ({
         error: false,
         institutes: res.data,
@@ -18,7 +19,7 @@ const fetchInstitute = async (params) => await Axios.get(`https://backend-mock-t
 export async function getStaticProps() {
     // params contains the post `id`.
     // If the route is like /posts/1, then params.id is 1
-    const res = await fetch('https://backend-mock-test-crash.herokuapp.com/city-list/')
+    const res = await fetch(`'${BACKEND_URL}/city-list/'`)
     const cities = await res.json()
 
     //const post = await res.json()

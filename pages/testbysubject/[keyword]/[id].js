@@ -2,9 +2,10 @@ import { useRouter } from 'next/router';
 import React from 'react'
 import Axios from 'axios';
 import Link from 'next/link'
+import { BACKEND_URL } from '../../../constants';
 
 
-const fetchInstitute = async (params) => await Axios.get(`https://backend-mock-test-crash.herokuapp.com/test-by-subject-list/${params.id}/`)
+const fetchInstitute = async (params) => await Axios.get(`${BACKEND_URL}/test-by-subject-list/${params.id}/`)
     .then(res => ({
         error: false,
         institutes: res.data,
@@ -18,7 +19,7 @@ const fetchInstitute = async (params) => await Axios.get(`https://backend-mock-t
 
 export async function getStaticPaths() {
     // Call an external API endpoint to get posts
-    const res = await fetch('https://backend-mock-test-crash.herokuapp.com/subject-list/')
+    const res = await fetch(`${BACKEND_URL}/subject-list/`)
     const tests = await res.json()
 
     // Get the paths we want to pre-render based on posts
@@ -65,9 +66,9 @@ export default function InstituteIndex({ institutes,keyword }) {
         return <h1>Loading...</h1>
     }
 
-    if (!institutes) {
+    if (institutes.institutes.length == 0) {
 
-        return <h1>No data</h1>;
+        return <h1>No data found.</h1>;
     }
 
     return (
