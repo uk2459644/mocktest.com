@@ -17,16 +17,6 @@
   </url>
   
   <url>
-      <loc>https://mocktest.site/article/article-index</loc>
-      <priority>0.80</priority>
-  </url>
-  
-  <url>
-      <loc>https://mocktest.site/article/preview-article-index</loc>
-      <priority>0.80</priority>
-  </url>
-  
-  <url>
       <loc>https://mocktest.site/category/mockcat</loc>
       <priority>0.80</priority>
   </url>
@@ -67,42 +57,7 @@
   </url>
   
   <url>
-      <loc>https://mocktest.site/institute/cities</loc>
-      <priority>0.80</priority>
-  </url>
-  
-  <url>
-      <loc>https://mocktest.site/jobs/info-index</loc>
-      <priority>0.80</priority>
-  </url>
-  
-  <url>
-      <loc>https://mocktest.site/jobs/preview-info-index</loc>
-      <priority>0.80</priority>
-  </url>
-  
-  <url>
       <loc>https://mocktest.site/ourteam/team</loc>
-      <priority>0.80</priority>
-  </url>
-  
-  <url>
-      <loc>https://mocktest.site/ssc-je-ce/ssc-je-ce-index</loc>
-      <priority>0.80</priority>
-  </url>
-  
-  <url>
-      <loc>https://mocktest.site/ssc-je-ce/ssc-je-ce-preview</loc>
-      <priority>0.80</priority>
-  </url>
-  
-  <url>
-      <loc>https://mocktest.site/ssc-je-ee/ssc-je-ee-index</loc>
-      <priority>0.80</priority>
-  </url>
-  
-  <url>
-      <loc>https://mocktest.site/ssc-je-ee/ssc-je-ee-preview</loc>
       <priority>0.80</priority>
   </url>
   
@@ -118,11 +73,6 @@
   
   <url>
       <loc>https://mocktest.site/waiting/waiting-index</loc>
-      <priority>0.80</priority>
-  </url>
-  
-  <url>
-      <loc>https://mocktest.site/institute/coachings/coaching-index</loc>
       <priority>0.80</priority>
   </url>
   
