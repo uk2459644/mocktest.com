@@ -11,7 +11,7 @@ For proper functioning of this project , I have feeded some data, with a backend
  - [Django](https://www.djangoproject.com/) -- For Backend 
 
  ## Links 
- - [Frontend](https://mocktest.site/)
+ - [Frontend](https://mocktest.vercel.app/)
  - [Backend](https://mockt-test.onrender.com)
 
  ### Important Commands
