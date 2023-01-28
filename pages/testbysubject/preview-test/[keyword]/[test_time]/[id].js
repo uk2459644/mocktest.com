@@ -298,6 +298,8 @@ export default function QuestionPageRRBGROUPD({ questions, test_time }) {
   }
 
   const markViewLaterData = () => {
+    let newArray = [...answerdata];
+    
     let correct_ans = answerdata[questionNumber].correct_ans;
     let user_ans = answerdata[questionNumber].user_ans;
     let marks = answerdata[questionNumber].marks;
@@ -309,7 +311,7 @@ export default function QuestionPageRRBGROUPD({ questions, test_time }) {
     let user_text = qset[questionNumber].user_text;
 
 
-    let newArray = [...answerdata];
+   
 
     newArray[questionNumber] = {
       id: questionNumber,
@@ -469,7 +471,7 @@ export default function QuestionPageRRBGROUPD({ questions, test_time }) {
               <div>
                 {analysis_answer_data.map((question, index) => {
                   return (
-                    <div>
+                    <div key={index}>
                       <AnalysisQuestionCard
                         key={index}
                         question={question}
